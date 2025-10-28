@@ -1,0 +1,172 @@
+object frmEncerramento: TfrmEncerramento
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 606
+  ClientWidth = 360
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnClose = FormClose
+  DesignerMasterStyle = 3
+  object Rectangle1: TRectangle
+    Align = Top
+    Fill.Color = claWhite
+    Sides = []
+    Size.Width = 360.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = xFFE2E2E2
+    object lbl_titulo: TLabel
+      Align = Contents
+      StyledSettings = [Family]
+      Locked = True
+      Size.Width = 360.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 24.000000000000000000
+      TextSettings.Font.StyleExt = {00060000000000000004000000}
+      TextSettings.FontColor = xFFB0BAC9
+      TextSettings.HorzAlign = Center
+      TextSettings.Trimming = None
+      Text = 'Resumo Vendas'
+      ParentShowHint = False
+      ShowHint = False
+      TabOrder = 0
+    end
+    object btnVoltar: TButton
+      Align = FitLeft
+      Margins.Left = 5.000000000000000000
+      Position.X = 5.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'backtoolbutton'
+      TabOrder = 1
+      Text = ' '
+      TextSettings.Trimming = None
+      OnClick = btnVoltarClick
+    end
+  end
+  object ToolBar1: TToolBar
+    Align = Bottom
+    Position.Y = 558.000000000000000000
+    Size.Width = 360.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    TintColor = claCornflowerblue
+    object Button2: TButton
+      Align = Center
+      StyledSettings = [Family, Size, Style]
+      Margins.Left = 50.000000000000000000
+      Size.Width = 97.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Encerrar'
+      TextSettings.FontColor = claWhite
+      TextSettings.Trimming = None
+      TintColor = claTeal
+      OnClick = Button2Click
+    end
+    object spImprime: TSpeedButton
+      Align = Right
+      Images = dmLocal.ImageList1
+      ImageIndex = 17
+      Margins.Right = 10.000000000000000000
+      Position.X = 302.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'cameratoolbutton'
+      TextSettings.Trimming = None
+    end
+  end
+  object Layout1: TLayout
+    Align = Client
+    Size.Width = 360.000000000000000000
+    Size.Height = 509.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    object lsvResumo: TListView
+      ItemAppearanceClassName = 'TDynamicAppearance'
+      ItemEditAppearanceClassName = 'TDynamicAppearance'
+      HeaderAppearanceClassName = 'TListHeaderObjects'
+      FooterAppearanceClassName = 'TListHeaderObjects'
+      AllowSelection = False
+      Align = Client
+      Size.Width = 360.000000000000000000
+      Size.Height = 486.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      ItemAppearance.ItemHeight = 30
+      ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+        item
+          AppearanceObjectName = 'Text1'
+          AppearanceClassName = 'TTextObjectAppearance'
+          Appearance.Width = 87.000000000000000000
+          Appearance.Height = 22.000000000000000000
+          Appearance.PlaceOffset.X = 8.000000000000000000
+        end
+        item
+          AppearanceObjectName = 'Text2'
+          AppearanceClassName = 'TTextObjectAppearance'
+          Appearance.TextAlign = Trailing
+          Appearance.Width = 161.000000000000000000
+          Appearance.Height = 22.000000000000000000
+          Appearance.PlaceOffset.X = 158.000000000000000000
+        end>
+      ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
+        item
+          AppearanceObjectName = 'Text1'
+          AppearanceClassName = 'TTextObjectAppearance'
+        end>
+      ItemAppearanceObjects.HeaderObjects.Text.Width = 255.000000000000000000
+      ItemAppearanceObjects.HeaderObjects.Text.Height = 24.000000000000000000
+      CanSwipeDelete = False
+      ShowSelection = False
+      ControlType = Platform
+    end
+    object Label1: TLabel
+      Align = Top
+      Margins.Left = 20.000000000000000000
+      Position.X = 20.000000000000000000
+      Size.Width = 340.000000000000000000
+      Size.Height = 23.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Comanda                                             Total'
+      TabOrder = 1
+    end
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = dmLocal.qrEncerra
+    ScopeMappings = <>
+    Left = 176
+    Top = 264
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 68
+    Top = 245
+    object LinkFillControlToField1: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      Control = lsvResumo
+      Track = True
+      FillDataSource = BindSourceDB1
+      AutoFill = True
+      FillExpressions = <
+        item
+          SourceMemberName = 'lkmesa'
+          ControlMemberName = 'Text1'
+        end
+        item
+          SourceMemberName = 'Geral'
+          ControlMemberName = 'Text2'
+        end>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+  end
+end

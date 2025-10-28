@@ -1,0 +1,199 @@
+object frmDestinoImp: TfrmDestinoImp
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 580
+  ClientWidth = 394
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnClose = FormClose
+  OnShow = FormShow
+  DesignerMasterStyle = 3
+  object Rectangle1: TRectangle
+    Align = Top
+    Fill.Color = claWhite
+    Sides = []
+    Size.Width = 394.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = xFFE2E2E2
+    object lbl_titulo: TLabel
+      Align = Contents
+      StyledSettings = [Family]
+      Locked = True
+      Size.Width = 394.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 24.000000000000000000
+      TextSettings.Font.StyleExt = {00060000000000000004000000}
+      TextSettings.FontColor = xFFB0BAC9
+      TextSettings.HorzAlign = Center
+      TextSettings.Trimming = None
+      Text = 'Destino Impressao'
+      ParentShowHint = False
+      ShowHint = False
+      TabOrder = 0
+    end
+    object btnVoltar: TButton
+      Align = FitLeft
+      Margins.Left = 10.000000000000000000
+      Position.X = 10.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'backtoolbutton'
+      TabOrder = 1
+      Text = ' '
+      TextSettings.Trimming = None
+      OnClick = btnVoltarClick
+    end
+  end
+  object Layout1: TLayout
+    Align = Top
+    HitTest = True
+    Position.Y = 49.000000000000000000
+    Size.Width = 394.000000000000000000
+    Size.Height = 232.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object Label1: TLabel
+      Align = Top
+      Margins.Left = 10.000000000000000000
+      Margins.Top = 10.000000000000000000
+      Margins.Right = 10.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 374.000000000000000000
+      Size.Height = 23.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Grupos'
+      TabOrder = 0
+      object cbxGrupos: TComboBox
+        Position.Y = 23.000000000000000000
+        Size.Width = 233.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+      end
+    end
+    object Label2: TLabel
+      Align = Top
+      Margins.Left = 10.000000000000000000
+      Margins.Top = 50.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 83.000000000000000000
+      Size.Width = 384.000000000000000000
+      Size.Height = 23.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Destino Impress'#227'o'
+      TabOrder = 1
+      object cbxDestino: TComboBox
+        Position.X = -10.000000000000000000
+        Position.Y = 36.000000000000000000
+        Size.Width = 283.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+      end
+    end
+    object rect_imp: TRectangle
+      Align = Bottom
+      Fill.Color = xFF7AF74A
+      Margins.Left = 50.000000000000000000
+      Margins.Top = 15.000000000000000000
+      Margins.Right = 50.000000000000000000
+      Margins.Bottom = 20.000000000000000000
+      Position.X = 50.000000000000000000
+      Position.Y = 170.000000000000000000
+      Size.Width = 294.000000000000000000
+      Size.Height = 42.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 4.000000000000000000
+      YRadius = 4.000000000000000000
+      OnClick = rect_impClick
+      object Label3: TLabel
+        Align = Center
+        StyledSettings = [Family]
+        Locked = True
+        Size.Width = 271.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 16.000000000000000000
+        TextSettings.FontColor = claWhite
+        TextSettings.HorzAlign = Center
+        TextSettings.Trimming = None
+        Text = 'Adicionar'
+        TabOrder = 0
+      end
+    end
+  end
+  object lsvDestino: TListView
+    ItemAppearanceClassName = 'TDynamicAppearance'
+    ItemEditAppearanceClassName = 'TDynamicAppearance'
+    HeaderAppearanceClassName = 'TListHeaderObjects'
+    FooterAppearanceClassName = 'TListHeaderObjects'
+    Align = Client
+    Size.Width = 394.000000000000000000
+    Size.Height = 299.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+      item
+        AppearanceObjectName = 'Text1'
+        AppearanceClassName = 'TTextObjectAppearance'
+        Appearance.TextAlign = Leading
+        Appearance.Width = 191.000000000000000000
+        Appearance.Height = 20.000000000000000000
+        Appearance.PlaceOffset.X = 8.000000000000000000
+        Appearance.PlaceOffset.Y = 16.000000000000000000
+      end
+      item
+        AppearanceObjectName = 'Text2'
+        AppearanceClassName = 'TTextObjectAppearance'
+        Appearance.TextAlign = Leading
+        Appearance.Width = 161.000000000000000000
+        Appearance.Height = 20.000000000000000000
+        Appearance.PlaceOffset.X = 206.000000000000000000
+        Appearance.PlaceOffset.Y = 16.000000000000000000
+      end>
+    ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
+      item
+        AppearanceObjectName = 'Text1'
+        AppearanceClassName = 'TTextObjectAppearance'
+      end>
+    ItemAppearanceObjects.HeaderObjects.Text.Visible = False
+    ItemAppearanceObjects.FooterObjects.Text.Visible = False
+    CanSwipeDelete = False
+    SearchAlwaysOnTop = False
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = dmLocal.qrGrupos
+    ScopeMappings = <>
+    Left = 216
+    Top = 408
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 316
+    Top = 77
+    object LinkListControlToField1: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      Control = lsvDestino
+      FillExpressions = <
+        item
+          SourceMemberName = 'grupo'
+          ControlMemberName = 'Text1'
+        end
+        item
+          SourceMemberName = 'local'
+          ControlMemberName = 'Text2'
+        end>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+  end
+end

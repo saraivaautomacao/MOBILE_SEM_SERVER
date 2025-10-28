@@ -1,0 +1,487 @@
+object frmConfImpressora: TfrmConfImpressora
+  Left = 536
+  Top = 240
+  Caption = 'ACBrPosPrinter - Teste'
+  ClientHeight = 631
+  ClientWidth = 405
+  Position = ScreenCenter
+  StyleBook = StyleBook1
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop, iPhone, iPad]
+  OnCreate = FormCreate
+  OnClose = FormClose
+  OnShow = FormShow
+  Left = 536
+  Top = 240
+  DesignerMasterStyle = 0
+  object Panel2: TPanel
+    Align = Client
+    Size.Width = 405.000000000000000000
+    Size.Height = 582.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object gbConfiguracao: TGroupBox
+      Align = Top
+      Size.Width = 405.000000000000000000
+      Size.Height = 369.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Configura'#231#227'o'
+      TabOrder = 0
+      object Label1: TLabel
+        AutoSize = True
+        StyledSettings = [Family, Style, FontColor]
+        Position.X = 20.000000000000000000
+        Position.Y = 21.000000000000000000
+        Size.Width = 38.000000000000000000
+        Size.Height = 15.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 11.000000000000000000
+        TextSettings.WordWrap = False
+        Text = 'Modelo'
+        object cbxModelo: TComboBox
+          Position.Y = 15.000000000000000000
+          Size.Width = 225.000000000000000000
+          Size.Height = 26.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          OnChange = cbxModeloChange
+        end
+      end
+      object Label4: TLabel
+        AutoSize = True
+        StyledSettings = [Family, Style, FontColor]
+        Position.X = 20.000000000000000000
+        Position.Y = 70.000000000000000000
+        Size.Width = 26.000000000000000000
+        Size.Height = 15.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 11.000000000000000000
+        TextSettings.WordWrap = False
+        Text = 'Porta'
+        object cbxPorta: TComboEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 4
+          ItemHeight = 19.000000000000000000
+          ItemIndex = -1
+          Position.Y = 15.000000000000000000
+          Size.Width = 290.000000000000000000
+          Size.Height = 28.000000000000000000
+          Size.PlatformDefault = False
+          OnChange = cbxPortaChange
+        end
+      end
+      object Label2: TLabel
+        AutoSize = True
+        StyledSettings = [Family, Style, FontColor]
+        Position.X = 23.000000000000000000
+        Position.Y = 174.000000000000000000
+        Size.Width = 39.000000000000000000
+        Size.Height = 15.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 11.000000000000000000
+        TextSettings.WordWrap = False
+        Text = 'Colunas'
+      end
+      object Label3: TLabel
+        AutoSize = True
+        StyledSettings = [Family, Style, FontColor]
+        Position.X = 104.000000000000000000
+        Position.Y = 175.000000000000000000
+        Size.Width = 39.000000000000000000
+        Size.Height = 15.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 11.000000000000000000
+        TextSettings.WordWrap = False
+        Text = 'Espa'#231'os'
+      end
+      object btSerial: TSpeedButton
+        Position.X = 264.000000000000000000
+        Position.Y = 72.000000000000000000
+        Size.Width = 25.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Trimming = None
+      end
+      object Label6: TLabel
+        AutoSize = True
+        StyledSettings = [Family, Style, FontColor]
+        Position.X = 192.000000000000000000
+        Position.Y = 174.000000000000000000
+        Size.Width = 29.000000000000000000
+        Size.Height = 15.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 11.000000000000000000
+        TextSettings.WordWrap = False
+        Text = 'Buffer'
+      end
+      object Label7: TLabel
+        AutoSize = True
+        StyledSettings = [Family, Style, FontColor]
+        Position.X = 271.000000000000000000
+        Position.Y = 174.000000000000000000
+        Size.Width = 67.000000000000000000
+        Size.Height = 15.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 11.000000000000000000
+        TextSettings.WordWrap = False
+        Text = 'Linhas '#224' Pular'
+      end
+      object seColunas: TSpinBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 2
+        Cursor = crIBeam
+        Value = 48.000000000000000000
+        Position.X = 8.000000000000000000
+        Position.Y = 193.000000000000000000
+        TextSettings.Font.Size = 10.000000000000000000
+        Size.Width = 78.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Style, FontColor]
+      end
+      object cbControlePorta: TCheckBox
+        Hint = 
+          'Conecta a Porta Serial a cada comando enviado'#13#10'Desconecta da Por' +
+          'ta Serial ap'#243's o envio'
+        IsChecked = True
+        Position.X = 20.000000000000000000
+        Position.Y = 231.000000000000000000
+        Size.Width = 170.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        Text = 'Controle Porta'
+      end
+      object seEspLinhas: TSpinBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 4
+        Cursor = crIBeam
+        Position.X = 94.000000000000000000
+        Position.Y = 193.000000000000000000
+        TextSettings.Font.Size = 10.000000000000000000
+        Size.Width = 82.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Style, FontColor]
+        OnChange = seEspLinhasChange
+      end
+      object seLinhasBuffer: TSpinBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 5
+        Cursor = crIBeam
+        Position.X = 181.000000000000000000
+        Position.Y = 193.000000000000000000
+        TextSettings.Font.Size = 10.000000000000000000
+        Size.Width = 74.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Style, FontColor]
+        OnChange = seLinhasBufferChange
+      end
+      object bAtivar: TButton
+        Anchors = []
+        StyledSettings = [FontColor]
+        ModalResult = 1
+        Position.X = 297.000000000000000000
+        Position.Y = 45.000000000000000000
+        Size.Width = 57.000000000000000000
+        Size.Height = 43.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+        Text = 'Ativar'
+        TextSettings.Font.Family = 'MS Sans Serif'
+        TextSettings.Font.Size = 11.000000000000000000
+        TextSettings.Trimming = None
+        Visible = False
+        OnClick = bAtivarClick
+      end
+      object seLinhasPular: TSpinBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 7
+        Cursor = crIBeam
+        Position.X = 263.000000000000000000
+        Position.Y = 191.000000000000000000
+        TextSettings.Font.Size = 10.000000000000000000
+        Size.Width = 93.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Style, FontColor]
+        OnChange = seLinhasPularChange
+      end
+      object cbCortarPapel: TCheckBox
+        Hint = 
+          'Conecta a Porta Serial a cada comando enviado'#13#10'Desconecta da Por' +
+          'ta Serial ap'#243's o envio'
+        IsChecked = True
+        Position.X = 20.000000000000000000
+        Position.Y = 252.000000000000000000
+        Size.Width = 122.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 8
+        Text = 'Cortar Papel'
+      end
+      object btSearchPorts: TButton
+        Position.X = 306.000000000000000000
+        Position.Y = 88.000000000000000000
+        Size.Width = 48.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'searchtoolbuttonbordered'
+        TabOrder = 9
+        Text = 'btSearchPorts'
+        TextSettings.Trimming = None
+        OnClick = btSearchPortsClick
+      end
+      object Button1: TButton
+        Align = MostBottom
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Left = 120.000000000000000000
+        Margins.Right = 120.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        Position.X = 120.000000000000000000
+        Position.Y = 320.000000000000000000
+        Size.Width = 165.000000000000000000
+        Size.Height = 39.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'Adicionar'
+        TextSettings.Font.Size = 10.000000000000000000
+        TextSettings.Trimming = None
+        OnClick = Button1Click
+      end
+      object Button2: TButton
+        Align = Bottom
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Left = 120.000000000000000000
+        Margins.Right = 120.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        Position.X = 120.000000000000000000
+        Position.Y = 272.000000000000000000
+        Size.Width = 165.000000000000000000
+        Size.Height = 38.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'Teste Impress'#227'o'
+        TextSettings.Font.Size = 10.000000000000000000
+        TextSettings.Trimming = None
+        OnClick = bImpLinhaALinhaClick
+      end
+      object Label5: TLabel
+        AutoSize = True
+        StyledSettings = [Family, Style, FontColor]
+        Position.X = 21.000000000000000000
+        Position.Y = 121.000000000000000000
+        Size.Width = 25.000000000000000000
+        Size.Height = 15.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 11.000000000000000000
+        TextSettings.WordWrap = False
+        Text = 'Local'
+        TabOrder = 35
+        object edtLocal: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 4
+          Position.Y = 18.000000000000000000
+          Size.Width = 290.000000000000000000
+          Size.Height = 28.000000000000000000
+          Size.PlatformDefault = False
+          CharCase = ecUpperCase
+        end
+      end
+    end
+    object ListView1: TListView
+      ItemAppearanceClassName = 'TDynamicAppearance'
+      ItemEditAppearanceClassName = 'TDynamicAppearance'
+      HeaderAppearanceClassName = 'TListHeaderObjects'
+      FooterAppearanceClassName = 'TListHeaderObjects'
+      Align = Client
+      Size.Width = 405.000000000000000000
+      Size.Height = 213.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      ItemAppearance.ItemHeight = 40
+      ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+        item
+          AppearanceObjectName = 'Text1'
+          AppearanceClassName = 'TTextObjectAppearance'
+          Appearance.Font.Size = 10.000000000000000000
+          Appearance.Width = 103.000000000000000000
+          Appearance.Height = 21.000000000000000000
+          Appearance.PlaceOffset.Y = 8.000000000000000000
+        end
+        item
+          AppearanceObjectName = 'Text2'
+          AppearanceClassName = 'TTextObjectAppearance'
+          Appearance.Font.Size = 10.000000000000000000
+          Appearance.Width = 103.000000000000000000
+          Appearance.Height = 21.000000000000000000
+          Appearance.PlaceOffset.X = 104.000000000000000000
+          Appearance.PlaceOffset.Y = 8.000000000000000000
+        end
+        item
+          AppearanceObjectName = 'TextButton3'
+          AppearanceClassName = 'TTextButtonObjectAppearance'
+          Appearance.ButtonType = Delete
+          Appearance.Width = 41.000000000000000000
+          Appearance.Height = 33.000000000000000000
+          Appearance.PlaceOffset.X = 326.000000000000000000
+          Appearance.PlaceOffset.Y = 3.000000000000000000
+          Appearance.Text = '-'
+        end
+        item
+          AppearanceObjectName = 'Text4'
+          AppearanceClassName = 'TTextObjectAppearance'
+          Appearance.Font.Size = 10.000000000000000000
+          Appearance.Width = 103.000000000000000000
+          Appearance.Height = 23.000000000000000000
+          Appearance.PlaceOffset.X = 208.000000000000000000
+          Appearance.PlaceOffset.Y = 7.000000000000000000
+        end>
+      ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
+        item
+          AppearanceObjectName = 'Text1'
+          AppearanceClassName = 'TTextObjectAppearance'
+        end>
+      ItemAppearanceObjects.HeaderObjects.Text.Visible = False
+      ItemAppearanceObjects.FooterObjects.Text.Visible = False
+      CanSwipeDelete = False
+      OnItemClick = ListView1ItemClick
+      OnButtonClick = ListView1ButtonClick
+    end
+  end
+  object StyleBook1: TStyleBook
+    Styles = <
+      item
+        ResourcesBin = {
+          464D585F5354594C4520322E3501060D624174697661725374796C6531039906
+          005450463007544C61796F757400095374796C654E616D65060D624174697661
+          725374796C65310A506F736974696F6E2E580500000000000000BC07400A506F
+          736974696F6E2E590500000000000080BB07400A53697A652E57696474680500
+          000000000000B605400B53697A652E4865696768740500000000000000C00340
+          1453697A652E506C6174666F726D44656661756C7408000A5452656374616E67
+          6C6500095374796C654E616D65060A6261636B67726F756E6405416C69676E07
+          08436F6E74656E74730A46696C6C2E436F6C6F72070978464645464546454607
+          48697454657374080A53697A652E57696474680500000000000000B605400B53
+          697A652E4865696768740500000000000000C003401453697A652E506C617466
+          6F726D44656661756C74080B5374726F6B652E4B696E6407044E6F6E65075852
+          61646975730500000000000000C0004007595261646975730500000000000000
+          C00040000A5452656374616E676C650005416C69676E0708436F6E74656E7473
+          0946696C6C2E4B696E6407084772616469656E741446696C6C2E477261646965
+          6E742E506F696E74730E0105436F6C6F720709783234463446344634064F6666
+          7365740500000000000000000000000105436F6C6F7207097832344541454145
+          41064F6666736574050000000000EE7CFFFD3F000105436F6C6F720709783445
+          383638363836064F6666736574050000000000000080FE3F0000074869745465
+          7374080A53697A652E57696474680500000000000000B605400B53697A652E48
+          65696768740500000000000000C003401453697A652E506C6174666F726D4465
+          6661756C74080C5374726F6B652E436F6C6F7207097843383446344634460758
+          5261646975730500000000000000C00040075952616469757305000000000000
+          00C0004000000F54436F6C6F72416E696D6174696F6E00084475726174696F6E
+          050000000000CDCCCCFC3F0C50726F70657274794E616D65060A46696C6C2E43
+          6F6C6F720A537461727456616C756507097846464546454645460953746F7056
+          616C756507097846464135443946460754726967676572061049734D6F757365
+          4F7665723D7472756500000F54436F6C6F72416E696D6174696F6E0008447572
+          6174696F6E050000000000CDCCCCFC3F0C50726F70657274794E616D65060A46
+          696C6C2E436F6C6F720A537461727456616C7565070978464641354439464609
+          53746F7056616C75650709784646454645464546075472696767657206114973
+          4D6F7573654F7665723D66616C736500001054496E6E6572476C6F7745666665
+          63740008536F66746E657373050000000000CDCCCCFD3F09476C6F77436F6C6F
+          720709784646344634383438074F7061636974790500000000006666E6FE3F07
+          54726967676572060E4973507265737365643D7472756507456E61626C656408
+          00000A5452656374616E676C650005416C69676E0706436C69656E740946696C
+          6C2E4B696E6407044E6F6E65064C6F636B6564090748697454657374080C5061
+          6464696E672E4C656674050000000000000080FF3F0B50616464696E672E546F
+          70050000000000000080FF3F0D50616464696E672E5269676874050000000000
+          000080FF3F0E50616464696E672E426F74746F6D050000000000000080FF3F0A
+          53697A652E57696474680500000000000000B605400B53697A652E4865696768
+          740500000000000000C003401453697A652E506C6174666F726D44656661756C
+          74080C5374726F6B652E436F6C6F720709783936464346434643075852616469
+          7573050000000000000080004007595261646975730500000000000000800040
+          00000005545465787400095374796C654E616D6506047465787405416C69676E
+          0706436C69656E74064C6F636B6564090748697454657374080C50616464696E
+          672E4C6566740500000000000000A001400B50616464696E672E546F70050000
+          0000000000C000400D50616464696E672E52696768740500000000000000A001
+          400E50616464696E672E426F74746F6D0500000000000000C000400A53697A65
+          2E57696474680500000000000000B605400B53697A652E486569676874050000
+          0000000000C003401453697A652E506C6174666F726D44656661756C74080454
+          6578740606627574746F6E00000B54476C6F774566666563740008536F66746E
+          657373050000000000CDCCCCFC3F09476C6F77436F6C6F720709783832303035
+          414343074F7061636974790500000000006666E6FE3F0754726967676572060E
+          4973466F63757365643D7472756507456E61626C656408000000}
+      end>
+    Left = 312
+    Top = 32
+  end
+  object Rectangle1: TRectangle
+    Align = Top
+    Fill.Color = claWhite
+    Sides = []
+    Size.Width = 405.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = xFFE2E2E2
+    object lbl_titulo: TLabel
+      Align = Contents
+      StyledSettings = [Family]
+      Locked = True
+      Size.Width = 405.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 24.000000000000000000
+      TextSettings.Font.StyleExt = {00060000000000000004000000}
+      TextSettings.FontColor = xFFB0BAC9
+      TextSettings.HorzAlign = Center
+      TextSettings.Trimming = None
+      Text = 'Impressoras'
+      ParentShowHint = False
+      ShowHint = False
+      TabOrder = 0
+    end
+    object btnVoltar: TButton
+      Align = FitLeft
+      Margins.Left = 20.000000000000000000
+      Position.X = 20.000000000000000000
+      Size.Width = 49.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'backtoolbutton'
+      TabOrder = 1
+      Text = ' '
+      TextSettings.Trimming = None
+      OnClick = btnVoltarClick
+    end
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = dmLocal.qrImpressora
+    ScopeMappings = <>
+    Left = 232
+    Top = 549
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 324
+    Top = 85
+    object LinkListControlToField1: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      Control = ListView1
+      FillExpressions = <
+        item
+          SourceMemberName = 'modelo_descricao'
+          ControlMemberName = 'Text1'
+        end
+        item
+          SourceMemberName = 'local'
+          ControlMemberName = 'Text2'
+        end
+        item
+          SourceMemberName = 'porta'
+          ControlMemberName = 'Text4'
+        end>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+  end
+end

@@ -1,0 +1,86 @@
+object frSAbor: TfrSAbor
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 650
+  ClientWidth = 384
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnShow = FormShow
+  DesignerMasterStyle = 3
+  object ListView1: TListView
+    ItemAppearanceClassName = 'TListItemAppearance'
+    ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+    HeaderAppearanceClassName = 'TListHeaderObjects'
+    FooterAppearanceClassName = 'TListHeaderObjects'
+    EditMode = True
+    Align = Client
+    Size.Width = 384.000000000000000000
+    Size.Height = 513.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    ItemAppearanceObjects.ItemEditObjects.Text.Width = 209.000000000000000000
+    ItemAppearanceObjects.ItemEditObjects.Text.Height = 44.000000000000000000
+    ItemAppearanceObjects.ItemEditObjects.Text.PlaceOffset.X = 54.000000000000000000
+    ItemAppearanceObjects.ItemEditObjects.GlyphButton.Width = 33.000000000000000000
+    ItemAppearanceObjects.ItemEditObjects.GlyphButton.Height = 30.000000000000000000
+    ItemAppearanceObjects.ItemEditObjects.GlyphButton.PlaceOffset.X = 6.000000000000000000
+    ItemAppearanceObjects.HeaderObjects.Text.Visible = False
+    ItemAppearanceObjects.FooterObjects.Text.Visible = False
+  end
+  object ToolBar2: TToolBar
+    Size.Width = 384.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    TintColor = claCornflowerblue
+    object Label1: TLabel
+      Align = Contents
+      StyledSettings = [Family, Style]
+      Size.Width = 384.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 20.000000000000000000
+      TextSettings.FontColor = claWhite
+      TextSettings.HorzAlign = Center
+      Text = 'Sabores'
+      TabOrder = 0
+    end
+  end
+  object ToolBar1: TToolBar
+    Align = Bottom
+    Position.Y = 602.000000000000000000
+    Size.Width = 384.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    TintColor = claCornflowerblue
+    OnClick = ToolBar1Click
+    object Button1: TButton
+      Align = Center
+      HitTest = False
+      IconTintColor = claWhite
+      Images = dmLocal.ImageList1
+      ImageIndex = 2
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'donetoolbutton'
+      TabOrder = 0
+      TextSettings.Trimming = None
+    end
+  end
+  object lblDescricao: TLabel
+    Align = Top
+    StyledSettings = [Family, Style, FontColor]
+    Position.Y = 48.000000000000000000
+    Size.Width = 384.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 16.000000000000000000
+    TextSettings.HorzAlign = Center
+    Text = 'lblDescricao'
+    TabOrder = 0
+  end
+end

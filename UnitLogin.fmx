@@ -1,0 +1,124 @@
+object FrmLogin: TFrmLogin
+  Left = 0
+  Top = 0
+  BorderStyle = None
+  Caption = 'Acesso'
+  ClientHeight = 564
+  ClientWidth = 372
+  Fill.Color = xFFF2F4FC
+  Fill.Kind = Solid
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  FullScreen = True
+  OnClose = FormClose
+  OnShow = FormShow
+  DesignerMasterStyle = 3
+  object TabControl: TTabControl
+    Align = Client
+    Size.Width = 372.000000000000000000
+    Size.Height = 515.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'TabControlStyle1'
+    TabHeight = 49.000000000000000000
+    TabIndex = 0
+    TabOrder = 0
+    TabPosition = None
+    Sizes = (
+      372s
+      515s)
+    object TabLogin: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabLogin'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object Layout1: TLayout
+        Align = Center
+        Margins.Bottom = 100.000000000000000000
+        Size.Width = 271.000000000000000000
+        Size.Height = 220.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object rect_login: TRectangle
+          Align = Top
+          Fill.Color = xFF4A70F7
+          Margins.Top = 50.000000000000000000
+          Position.Y = 102.000000000000000000
+          Size.Width = 271.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Kind = None
+          XRadius = 4.000000000000000000
+          YRadius = 4.000000000000000000
+          OnClick = rect_loginClick
+          object Label3: TLabel
+            Align = Center
+            StyledSettings = [Family]
+            Locked = True
+            Size.Width = 271.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 16.000000000000000000
+            TextSettings.FontColor = claWhite
+            TextSettings.HorzAlign = Center
+            TextSettings.Trimming = None
+            Text = 'Acessar'
+            TabOrder = 0
+          end
+        end
+        object edt_usuario: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Top
+          StyleLookup = 'editstyle'
+          TabOrder = 0
+          Position.X = 5.000000000000000000
+          Position.Y = 20.000000000000000000
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 20.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Size.Width = 261.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          TextPrompt = 'Atendente'
+          StyledSettings = [Family, Size, Style]
+          Caret.Color = claWhite
+        end
+      end
+    end
+  end
+  object Rectangle1: TRectangle
+    Align = Top
+    Fill.Color = claWhite
+    Sides = []
+    Size.Width = 372.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = xFFE2E2E2
+    object lbl_titulo: TLabel
+      Align = Contents
+      StyledSettings = [Family]
+      Locked = True
+      Size.Width = 372.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 24.000000000000000000
+      TextSettings.Font.StyleExt = {00060000000000000004000000}
+      TextSettings.FontColor = xFFB0BAC9
+      TextSettings.HorzAlign = Center
+      TextSettings.Trimming = None
+      Text = 'Acesso'
+      ParentShowHint = False
+      ShowHint = False
+      TabOrder = 0
+    end
+  end
+end
