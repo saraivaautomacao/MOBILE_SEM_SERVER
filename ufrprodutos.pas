@@ -143,9 +143,10 @@ end;
 
 procedure TfrmProdutos.Button2Click(Sender: TObject);
  var numcomanda:string;
+ var vendedor:string;
 begin
 
-  var qry:TFDQuery;
+     var qry:TFDQuery;
       qry:=TfDquery.Create(nil);
        var Memo:=TStringList.Create;
       try
@@ -177,71 +178,74 @@ begin
          dmLocal.qrVendas.open;
          frmComanda.StatusComanda(numcomanda,'O',dmLocal.qrVendasSomaTotal.value) ;
          //bloco de impressao direcionada
-
-
+          qry.open('select codigo,cognome form funcionarios where codigo='+quotedstr(udmLocal.CodigoVEndedor));
+          if not qry.isempty then
+             vendedor:=qry.fieldbyname('cognome').AsString
+          else
+             vendedor:='indefinido';
+          qry.close;
          with dmlocal do
          begin
+             memPedido.IndexFieldNames:='lkgupo';
+
              qrGrupos.open;
              qrImpressora.open;
-             mempedido.first;
-             while not mempedido.eof do
+             qrgrupos.first;
+             while not qrgrupos.eof do
              begin
-                 qrGrupos.locate('codigo',memPedidolkgrupo.asinteger);
-                 if trim(qrGruposlocal.asstring)<>emptystr then
+                 if trim(qrGruposlocal.asstring)=emptystr then
                  begin
-                    //configuracao da impressora direcionada
-                     qrimpressora.locate('local',qrGruposlocal.asString);
-                     aCBrPosPrinter1.Modelo := TACBrPosPrinterModelo(qrImpressoramodelo.asinteger);
-                     ACBrPosPrinter1.Porta  :=qrImpressoraporta.asString;
-                     ACBrPosPrinter1.LinhasEntreCupons := qrImpressoralinhaspular.asInteger;
-                     ACBrPosPrinter1.ControlePorta := qrImpressoracontroleporta.asBoolean;
-                     ACBrPosPrinter1.CortaPapel := qrImpressoracortarpapel.asBoolean;
-                     memo.clear;
-                     Memo.Add('</zera>');
-                     Memo.Add('<e>');
-                   // Memo.Add(cabecalho1);
-                    // Memo.Add(cabecalho2);
-                     Memo.Add('');
-                     Memo.add('MESA:'+mesa1);
-                     Memo.add('HORA PEDIDO:'+FormatDateTime('HH":"MM',TIME));
-                     Memo.add('ATENDENTE:'+VENDEDOR);
-                    // Memo.add('</lf>');
-                     while (not dmModule.mtItensPedido.eof) and (dmModule.mtItensPedido.FieldByName('coddest').AsInteger=qry.FieldByName('codDestino').asInteger) do
-                     begin
-                        Memo.Add(FloattoStrf( dmModule.mtItensPedido.FieldByName('qtde').asFloat,ffnumber,7,3)+ ' X ');
-                        Memo.Add(Copy(dmModule.mtItensPedido.FieldByName('produto').asString + ' ' + dmModule.mtItensPedido.FieldByName('Descresumida').AsString, 1, 24));
-                        if Length(dmModule.mtItensPedido.FieldByName('produto').asString+ ' ' + dmModule.mtItensPedido.FieldByName('Descresumida').AsString)>24 then
-                           Memo.Add(Copy(dmModule.mtItensPedido.FieldByName('produto').asString + ' ' + dmModule.mtItensPedido.FieldByName('Descresumida').AsString, 25, 24));
-                        if Length(dmModule.mtItensPedido.FieldByName('produto').asString+ ' ' + dmModule.mtItensPedido.FieldByName('Descresumida').AsString)>49 then
-                           Memo.Add(Copy(dmModule.mtItensPedido.FieldByName('produto').asString + ' ' + dmModule.mtItensPedido.FieldByName('Descresumida').AsString, 50, 24));
-                        if  dmModule.mtItensPedido.FieldByName('observacao').AsString<>emptystr then
-                              Memo.Add('obs:'+dmModule.mtItensPedido.FieldByName('observacao').asString);
+                    qrgrupos.next;
+                    continue;
+                 end;
+                  //configuracao da impressora direcionada
 
+                 mempedido.locate('lkgrupo',qrGruposcodigo.asInteger);
+                 qrimpressora.locate('local',qrGruposlocal.asString);
 
+                 aCBrPosPrinter1.Modelo := TACBrPosPrinterModelo(qrImpressoramodelo.asinteger);
+                 ACBrPosPrinter1.Porta  :=qrImpressoraporta.asString;
+                 ACBrPosPrinter1.LinhasEntreCupons := qrImpressoralinhaspular.asInteger;
+                 ACBrPosPrinter1.ControlePorta := qrImpressoracontroleporta.asBoolean;
+                 ACBrPosPrinter1.CortaPapel := qrImpressoracortarpapel.asBoolean;
+                 memo.clear;
+                 Memo.Add('</zera>');
+                 Memo.Add('<e>');
+               // Memo.Add(cabecalho1);
+                // Memo.Add(cabecalho2);
+                 Memo.Add('');
+                 Memo.add('MESA:'+numcomanda);
+                 Memo.add('HORA PEDIDO:'+FormatDateTime('HH":"MM',TIME));
+                 Memo.add('ATENDENTE:'+VENDEDOR);
+                // Memo.add('</lf>');
+                 while (not memPedido.eof) and (memPedido.FieldByName('lkgrupo').AsInteger=qrgruposcodigo.asinteger) do
+                 begin
+                    Memo.Add(FloattoStrf( mempedido.FieldByName('qtde').asFloat,ffnumber,7,3)+ ' X ');
+                    Memo.Add(Copy(mempedido.FieldByName('produto').asString + ' ' + mempedido.FieldByName('Descresumida').AsString, 1, 24));
+                    if Length(mempedido.FieldByName('produto').asString+ ' ' + mempedido.FieldByName('Descresumida').AsString)>24 then
+                       Memo.Add(Copy(mempedido.FieldByName('produto').asString + ' ' + mempedido.FieldByName('Descresumida').AsString, 25, 24));
+                    if Length(mempedido.FieldByName('produto').asString+ ' ' + mempedido.FieldByName('Descresumida').AsString)>49 then
+                       Memo.Add(Copy(mempedido.FieldByName('produto').asString + ' ' + mempedido.FieldByName('Descresumida').AsString, 50, 24));
+                    if  mempedido.FieldByName('observacao').AsString<>emptystr then
+                          Memo.Add('obs:'+mempedido.FieldByName('observacao').asString);
+                   mempedido.next;
+                end;
+                  Memo.add('</lf>');
+                  Memo.add('</pular_linhas>');
+                  Memo.Add('</fn>');
+                   Memo.Add('</corte_total>');
+                   Memo.Add('</beep>');
 
+               // if qry.FieldByName('corta_papel').AsString='S' Then
+                 //  Memo.Add('</corte_parcial>');
+                ACBrPosPrinter1.Imprimir(memo.text);
+                qrgrupos.next;
 
-
-                  end;
-                  mempedido.next;
              end;
-
-
-
-
-
-
-
-
-
-
-
          end;
-
-
-
-
       finally
           qry.DisposeOf;
+          dmLocal.memPedido.IndexFieldNames:='';
           dmLocal.mempedido.close;
           dmLocal.qrVendas.close;
           dmLocal.qrGrupos.close;
