@@ -1,0 +1,165 @@
+object frmCabecalho: TfrmCabecalho
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 635
+  ClientWidth = 328
+  Fill.Kind = Solid
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnClose = FormClose
+  OnShow = FormShow
+  DesignerMasterStyle = 3
+  object Rectangle1: TRectangle
+    Align = Top
+    Fill.Color = claWhite
+    Sides = []
+    Size.Width = 328.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = xFFE2E2E2
+    object lbl_titulo: TLabel
+      Align = Contents
+      StyledSettings = [Family]
+      Locked = True
+      Size.Width = 328.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 24.000000000000000000
+      TextSettings.Font.StyleExt = {00060000000000000004000000}
+      TextSettings.FontColor = xFFB0BAC9
+      TextSettings.HorzAlign = Center
+      TextSettings.Trimming = None
+      Text = 'Linhas Cabe'#231'alho'
+      ParentShowHint = False
+      ShowHint = False
+      TabOrder = 0
+    end
+    object btnVoltar: TButton
+      Align = FitLeft
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'backtoolbutton'
+      TabOrder = 1
+      Text = 'btnVoltar'
+      TextSettings.Trimming = None
+      OnClick = btnVoltarClick
+    end
+  end
+  object Layout2: TLayout
+    Align = Center
+    Margins.Bottom = 100.000000000000000000
+    Size.Width = 308.000000000000000000
+    Size.Height = 295.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Label4: TLabel
+      Align = Top
+      StyledSettings = [Family]
+      Margins.Left = 5.000000000000000000
+      Position.X = 5.000000000000000000
+      Size.Width = 303.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 18.000000000000000000
+      TextSettings.Font.StyleExt = {00060000000000000004000000}
+      TextSettings.FontColor = xFFB0BAC9
+      TextSettings.Trimming = None
+      Text = 'Linha1'
+      TabOrder = 0
+    end
+    object edt_Linha1: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Top
+      TabOrder = 2
+      Position.Y = 30.000000000000000000
+      Size.Width = 308.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      StyledSettings = [Family, Size, Style]
+      object lblPorta: TLabel
+        Align = Top
+        StyledSettings = [Family]
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 30.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 30.000000000000000000
+        Size.Width = 303.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 18.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        TextSettings.FontColor = xFFB0BAC9
+        TextSettings.Trimming = None
+        Text = 'Linha2'
+        TabOrder = 0
+      end
+    end
+    object rect_save_config: TRectangle
+      Align = Top
+      Fill.Color = xFF4A70F7
+      Margins.Top = 60.000000000000000000
+      Position.Y = 179.000000000000000000
+      Size.Width = 308.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 4.000000000000000000
+      YRadius = 4.000000000000000000
+      OnClick = rect_save_configClick
+      object Label5: TLabel
+        Align = Center
+        StyledSettings = [Family]
+        Locked = True
+        Size.Width = 271.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 16.000000000000000000
+        TextSettings.FontColor = claWhite
+        TextSettings.HorzAlign = Center
+        TextSettings.Trimming = None
+        Text = 'Salvar'
+        TabOrder = 0
+      end
+    end
+    object edtLinha2: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Top
+      TabOrder = 1
+      Position.Y = 87.000000000000000000
+      Margins.Top = 25.000000000000000000
+      Size.Width = 308.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      StyledSettings = [Family, Size, Style]
+    end
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = dmLocal.qrCabecalho
+    ScopeMappings = <>
+    Left = 152
+    Top = 304
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 20
+    Top = 5
+    object LinkControlToField1: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'cabecalho1'
+      Control = edt_Linha1
+      Track = False
+    end
+    object LinkControlToField2: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'cabecalho2'
+      Control = edtLinha2
+      Track = False
+    end
+  end
+end

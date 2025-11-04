@@ -16,7 +16,8 @@ uses
   unConfImpressora in 'unConfImpressora.pas' {frmConfImpressora},
   ufrdestinoimp in 'ufrdestinoimp.pas' {frmDestinoImp},
   ufrConfiguracao in 'ufrConfiguracao.pas' {frmConfiguracao},
-  ufrEncerramento in 'ufrEncerramento.pas' {frmEncerramento};
+  ufrEncerramento in 'ufrEncerramento.pas' {frmEncerramento},
+  ufrcabecalho in 'ufrcabecalho.pas' {frmCabecalho};
 
 {$R *.res}
 

@@ -1,10 +1,10 @@
 object dmLocal: TdmLocal
   OnCreate = DataModuleCreate
-  Height = 283
+  Height = 306
   Width = 428
   object conLocal: TFDConnection
     Params.Strings = (
-      'Database=C:\fontesdx12\rest_mobile_sem_server\banco\rest.db'
+      'Database=C:\fontesdx12\MOBILE_SEM_SERVER\banco\rest.db'
       'LockingMode=Normal'
       'DriverID=SQLite')
     ConnectedStoredUsage = []
@@ -2586,6 +2586,23 @@ object dmLocal: TdmLocal
       ProviderFlags = []
       ReadOnly = True
       DisplayFormat = '###,###,##0.00'
+    end
+  end
+  object qrCabecalho: TFDQuery
+    Connection = conLocal
+    SQL.Strings = (
+      'select * from cabecalho')
+    Left = 24
+    Top = 232
+    object qrCabecalhocabecalho1: TStringField
+      FieldName = 'cabecalho1'
+      Origin = 'cabecalho1'
+      Size = 45
+    end
+    object qrCabecalhocabecalho2: TStringField
+      FieldName = 'cabecalho2'
+      Origin = 'cabecalho2'
+      Size = 45
     end
   end
 end

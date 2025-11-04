@@ -178,7 +178,7 @@ begin
          dmLocal.qrVendas.open;
          frmComanda.StatusComanda(numcomanda,'O',dmLocal.qrVendasSomaTotal.value) ;
          //bloco de impressao direcionada
-          qry.open('select codigo,cognome form funcionarios where codigo='+quotedstr(udmLocal.CodigoVEndedor));
+          qry.open('select codigo,cognome from funcionarios where codigo='+quotedstr(udmLocal.CodigoVEndedor));
           if not qry.isempty then
              vendedor:=qry.fieldbyname('cognome').AsString
           else
@@ -187,20 +187,19 @@ begin
          with dmlocal do
          begin
              memPedido.IndexFieldNames:='lkgupo';
-
+             qrcabecalho.open;
              qrGrupos.open;
              qrImpressora.open;
              qrgrupos.first;
              while not qrgrupos.eof do
              begin
-                 if trim(qrGruposlocal.asstring)=emptystr then
+                 if (trim(qrGruposlocal.asstring)=emptystr)   or
+                (not mempedido.locate('lkgrupo',qrGruposcodigo.asinteger))   then
                  begin
                     qrgrupos.next;
                     continue;
                  end;
                   //configuracao da impressora direcionada
-
-                 mempedido.locate('lkgrupo',qrGruposcodigo.asInteger);
                  qrimpressora.locate('local',qrGruposlocal.asString);
 
                  aCBrPosPrinter1.Modelo := TACBrPosPrinterModelo(qrImpressoramodelo.asinteger);
@@ -211,10 +210,10 @@ begin
                  memo.clear;
                  Memo.Add('</zera>');
                  Memo.Add('<e>');
-               // Memo.Add(cabecalho1);
-                // Memo.Add(cabecalho2);
+                 Memo.Add(qrCabecalhocabecalho1.asstring);
+                 Memo.Add(qrCabecalhocabecalho2.asstring);
                  Memo.Add('');
-                 Memo.add('MESA:'+numcomanda);
+                 Memo.add('COMANDA:'+numcomanda);
                  Memo.add('HORA PEDIDO:'+FormatDateTime('HH":"MM',TIME));
                  Memo.add('ATENDENTE:'+VENDEDOR);
                 // Memo.add('</lf>');
@@ -250,6 +249,7 @@ begin
           dmLocal.qrVendas.close;
           dmLocal.qrGrupos.close;
           dmLocal.qrImpressora.close;
+          dmLocal.qrcabecalho.close;
           memo.DisposeOf;
          close;
       end;

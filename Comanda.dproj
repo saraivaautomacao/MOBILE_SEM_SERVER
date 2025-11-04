@@ -374,6 +374,10 @@
             <Form>frmEncerramento</Form>
             <FormType>fmx</FormType>
         </DCCReference>
+        <DCCReference Include="ufrcabecalho.pas">
+            <Form>frmCabecalho</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

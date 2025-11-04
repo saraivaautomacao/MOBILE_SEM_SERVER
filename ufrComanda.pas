@@ -44,6 +44,8 @@ type
     Image3: TImage;
     Image4: TImage;
     Label3: TLabel;
+    ListBoxItem4: TListBoxItem;
+    Image5: TImage;
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure lstbxMesasItemClick(const Sender: TCustomListBox;
@@ -60,6 +62,7 @@ type
     procedure ListBoxItem1Click(Sender: TObject);
     procedure ListBoxItem2Click(Sender: TObject);
     procedure ListBoxItem3Click(Sender: TObject);
+    procedure ListBoxItem4Click(Sender: TObject);
   private
     { Private declarations }
      fancy : TFancyDialog;
@@ -89,7 +92,7 @@ implementation
 
 uses  udmLocal, ufrprodutos,Data.FiredacJsonReflect,
   ufrDetalhe,system.json,controller.comanda, unConfImpressora, ufrdestinoimp,
-  ufrConfiguracao, ufrEncerramento;
+  ufrConfiguracao, ufrEncerramento, ufrcabecalho;
 
 procedure TfrmComanda.AddMapa(comanda, status, valor_total: String);
 begin
@@ -464,6 +467,15 @@ if NOT Assigned(FrmDestinoImp) then
         Application.CreateForm(TFrmDestinoImp,FrmDestinoImp);
 
     FrmDestinoImp.Show;
+      MultiView1.HideMaster;
+end;
+
+procedure TfrmComanda.ListBoxItem4Click(Sender: TObject);
+begin
+  if NOT Assigned(FrmCabecalho) then
+        Application.CreateForm(TFrmCabecalho,FrmCabecalho);
+
+    FrmCabecalho.Show;
       MultiView1.HideMaster;
 end;
 

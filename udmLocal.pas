@@ -86,6 +86,9 @@ type
     qrVendastotal: TBCDField;
     qrEncerralkmesa: TStringField;
     qrEncerraGeral: TLargeintField;
+    qrCabecalho: TFDQuery;
+    qrCabecalhocabecalho1: TStringField;
+    qrCabecalhocabecalho2: TStringField;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
