@@ -201,59 +201,46 @@ begin
  edtLocal.text:='';
  cbxModelo.itemindex:=-1;
  cbxPorta.itemindex:=-1;
+ btSearchPortsClick(self);
 end;
 
 procedure TfrmConfImpressora.bImpLinhaALinhaClick(Sender: TObject);
 begin
    with dmLocal do
    begin
-  aCBrPosPrinter1.Modelo := TACBrPosPrinterModelo( cbxModelo.ItemIndex );
- ACBrPosPrinter1.Porta  :=trim( cbxPorta.Text);
-
-  ACBrPosPrinter1.LinhasBuffer := Trunc(seLinhasBuffer.Value);
-  ACBrPosPrinter1.LinhasEntreCupons := Trunc(seLinhasPular.Value);
-  ACBrPosPrinter1.EspacoEntreLinhas := Trunc(seEspLinhas.Value);
-  ACBrPosPrinter1.ColunasFonteNormal := Trunc(seColunas.Value);
-  ACBrPosPrinter1.ControlePorta := cbControlePorta.IsChecked;
-  ACBrPosPrinter1.CortaPapel := cbCortarPapel.IsChecked;
-
-   ACBrPosPrinter1.Ativar ;
-  ACBrPosPrinter1.ImprimirLinha('</zera>');
-  ACBrPosPrinter1.ImprimirLinha('</linha_dupla>');
-  ACBrPosPrinter1.ImprimirLinha('FONTE NORMAL: '+IntToStr(ACBrPosPrinter1.ColunasFonteNormal)+' Colunas');
-  ACBrPosPrinter1.ImprimirLinha(LeftStr('....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8', ACBrPosPrinter1.ColunasFonteNormal));
-  ACBrPosPrinter1.ImprimirLinha('<e>EXPANDIDO: '+IntToStr(ACBrPosPrinter1.ColunasFonteExpandida)+' Colunas');
-  ACBrPosPrinter1.ImprimirLinha(LeftStr('....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8', ACBrPosPrinter1.ColunasFonteExpandida));
-  ACBrPosPrinter1.ImprimirLinha('</e><c>CONDENSADO: '+IntToStr(ACBrPosPrinter1.ColunasFonteCondensada)+' Colunas');
-  ACBrPosPrinter1.ImprimirLinha(LeftStr('....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8', ACBrPosPrinter1.ColunasFonteCondensada));
-  ACBrPosPrinter1.ImprimirLinha('</c><n>FONTE NEGRITO</N>');
-  ACBrPosPrinter1.ImprimirLinha('<in>FONTE INVERTIDA</in>');
-  ACBrPosPrinter1.ImprimirLinha('<S>FONTE SUBLINHADA</s>');
-  ACBrPosPrinter1.ImprimirLinha('<i>FONTE ITALICO</i>');
-  ACBrPosPrinter1.ImprimirLinha('FONTE NORMAL');
-  ACBrPosPrinter1.ImprimirLinha('</linha_simples>');
-  ACBrPosPrinter1.ImprimirLinha('<n>LIGA NEGRITO');
-  ACBrPosPrinter1.ImprimirLinha('<i>LIGA ITALICO');
-  ACBrPosPrinter1.ImprimirLinha('<S>LIGA SUBLINHADA');
-  ACBrPosPrinter1.ImprimirLinha('<c>LIGA CONDENSADA');
-  ACBrPosPrinter1.ImprimirLinha('<e>LIGA EXPANDIDA');
-  ACBrPosPrinter1.ImprimirLinha('</fn>FONTE NORMAL');
-  ACBrPosPrinter1.ImprimirLinha('</linha_simples>');
-  ACBrPosPrinter1.ImprimirLinha('<e><n>NEGRITO E EXPANDIDA</n></e>');
-  ACBrPosPrinter1.ImprimirLinha('</fn>FONTE NORMAL');
-  ACBrPosPrinter1.ImprimirLinha('<in><c>INVERTIDA E CONDENSADA</c></in>');
-  ACBrPosPrinter1.ImprimirLinha('</fn>FONTE NORMAL');
-  ACBrPosPrinter1.ImprimirLinha('</linha_simples>');
-  ACBrPosPrinter1.ImprimirLinha('</FB>FONTE TIPO B');
-  ACBrPosPrinter1.ImprimirLinha('<n>FONTE NEGRITO</N>');
-  ACBrPosPrinter1.ImprimirLinha('<e>FONTE EXPANDIDA</e>');
-  ACBrPosPrinter1.ImprimirLinha('<in>FONTE INVERTIDA</in>');
-  ACBrPosPrinter1.ImprimirLinha('<S>FONTE SUBLINHADA</s>');
-  ACBrPosPrinter1.ImprimirLinha('<i>FONTE ITALICO</i>');
-  ACBrPosPrinter1.ImprimirLinha('</FA>FONTE TIPO A');
-  ACBrPosPrinter1.ImprimirLinha('</FN>FONTE NORMAL');
-  ACBrPosPrinter1.ImprimirLinha('</corte_total>');
-  ACBrPosPrinter1.Desativar;
+      aCBrPosPrinter1.Modelo := TACBrPosPrinterModelo( cbxModelo.ItemIndex );
+      ACBrPosPrinter1.Porta  :=trim( cbxPorta.Text);
+      ACBrPosPrinter1.LinhasBuffer := Trunc(seLinhasBuffer.Value);
+      ACBrPosPrinter1.LinhasEntreCupons := Trunc(seLinhasPular.Value);
+      ACBrPosPrinter1.EspacoEntreLinhas := Trunc(seEspLinhas.Value);
+      ACBrPosPrinter1.ColunasFonteNormal := Trunc(seColunas.Value);
+      ACBrPosPrinter1.ControlePorta := true;  //cbControlePorta.IsChecked;
+      ACBrPosPrinter1.CortaPapel := cbCortarPapel.IsChecked;
+      var memo:TStringList:=TStringList.Create;
+      try
+          Memo.Add('</zera>');
+          Memo.Add('<e>');
+          Memo.Add('<a>UPPER AUTOMACAO</a>');
+          Memo.Add('88-9 97544059');
+          Memo.Add('');
+          Memo.add('COMANDA: 99x');
+          Memo.add('HORA PEDIDO:'+FormatDateTime('HH":"MM',TIME));
+          Memo.add('ATENDENTE: teste');
+           Memo.Add('</e>');
+          Memo.Add('');
+         for var cont:integer:= 1 to 3 do
+         begin
+            Memo.Add(cont.ToString+ ' X ');
+            Memo.Add('Produto comanda teste '+cont.tostring)
+        end;
+        Memo.add('</lf>');
+        Memo.add('</pular_linhas>');
+        Memo.Add('</fn>');
+        Memo.Add('</corte_total>');
+        ACBrPosPrinter1.Imprimir(memo.text);
+      finally
+          memo.DisposeOf;
+      end;
    end;
 end;
 
@@ -292,7 +279,7 @@ end;
 
 procedure TfrmConfImpressora.cbxPortaChange(Sender: TObject);
 begin
-  try
+ try
      dmLocal.ACBrPosPrinter1.Porta := cbxPorta.Text ;
   finally
     cbxPorta.Text := dmlocal.ACBrPosPrinter1.Porta ;
@@ -342,7 +329,7 @@ end;
 
 procedure TfrmConfImpressora.Button1Click(Sender: TObject);
 begin
-  if (cbxModelo.itemindex<>-1) and (cbxporta.itemindex<>-1) or (edtLocal.text<>emptystr) then
+  if (cbxModelo.itemindex<>-1) and (cbxporta.text<>emptystr) and (trim(edtLocal.text)<>emptystr) then
  begin
        with dmlocal do
        begin
@@ -352,9 +339,9 @@ begin
           qrImpressoracolunas.asInteger:= Trunc(seColunas.Value);
           qrImpressoralinhaspular.asInteger:= Trunc(seLinhasPular.Value);
           qrImpressoracortarpapel.AsBoolean:=cbCortarPapel.IsChecked;
-         qrImpressoracontroleporta.AsBoolean:=cbControlePorta.IsChecked;
-         qrImpressoramodelo_descricao.asString:=cbxModelo.text;
-         qrImpressoraLocal.asString:=edtLocal.text;
+          qrImpressoracontroleporta.AsBoolean:=cbControlePorta.IsChecked;
+          qrImpressoramodelo_descricao.asString:=cbxModelo.text;
+          qrImpressoraLocal.asString:=edtLocal.text;
           qrImpressora.post;
 
        end;

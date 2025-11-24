@@ -2448,6 +2448,7 @@ object dmLocal: TdmLocal
     ConfigQRCode.LarguraModulo = 4
     ConfigQRCode.ErrorLevel = 0
     LinhasEntreCupons = 0
+    ControlePorta = True
     Left = 313
     Top = 80
   end
@@ -2569,7 +2570,7 @@ object dmLocal: TdmLocal
   object qrEncerra: TFDQuery
     Connection = conLocal
     SQL.Strings = (
-      'select lkmesa,sum(vrunit*qtde) as Geral '
+      'select lkmesa,total'
       'from vendas'
       'group by lkmesa')
     Left = 264
@@ -2579,13 +2580,12 @@ object dmLocal: TdmLocal
       Origin = 'lkmesa'
       Size = 3
     end
-    object qrEncerraGeral: TLargeintField
-      AutoGenerateValue = arDefault
-      FieldName = 'Geral'
-      Origin = 'Geral'
-      ProviderFlags = []
-      ReadOnly = True
-      DisplayFormat = '###,###,##0.00'
+    object qrEncerratotal: TBCDField
+      FieldName = 'total'
+      Origin = 'total'
+      currency = True
+      Precision = 10
+      Size = 2
     end
   end
   object qrCabecalho: TFDQuery

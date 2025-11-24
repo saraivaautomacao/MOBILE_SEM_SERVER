@@ -205,18 +205,19 @@ begin
                  aCBrPosPrinter1.Modelo := TACBrPosPrinterModelo(qrImpressoramodelo.asinteger);
                  ACBrPosPrinter1.Porta  :=qrImpressoraporta.asString;
                  ACBrPosPrinter1.LinhasEntreCupons := qrImpressoralinhaspular.asInteger;
-                 ACBrPosPrinter1.ControlePorta := qrImpressoracontroleporta.asBoolean;
+                 ACBrPosPrinter1.ControlePorta :=true;// qrImpressoracontroleporta.asBoolean;
                  ACBrPosPrinter1.CortaPapel := qrImpressoracortarpapel.asBoolean;
                  memo.clear;
                  Memo.Add('</zera>');
                  Memo.Add('<e>');
+
                  Memo.Add(qrCabecalhocabecalho1.asstring);
                  Memo.Add(qrCabecalhocabecalho2.asstring);
                  Memo.Add('');
                  Memo.add('COMANDA:'+numcomanda);
                  Memo.add('HORA PEDIDO:'+FormatDateTime('HH":"MM',TIME));
                  Memo.add('ATENDENTE:'+VENDEDOR);
-                // Memo.add('</lf>');
+                 Memo.Add('');
                  while (not memPedido.eof) and (memPedido.FieldByName('lkgrupo').AsInteger=qrgruposcodigo.asinteger) do
                  begin
                     Memo.Add(FloattoStrf( mempedido.FieldByName('qtde').asFloat,ffnumber,7,3)+ ' X ');
@@ -233,7 +234,7 @@ begin
                   Memo.add('</pular_linhas>');
                   Memo.Add('</fn>');
                    Memo.Add('</corte_total>');
-                   Memo.Add('</beep>');
+                  // Memo.Add('</beep>');
 
                // if qry.FieldByName('corta_papel').AsString='S' Then
                  //  Memo.Add('</corte_parcial>');

@@ -162,7 +162,7 @@ object frmEncerramento: TfrmEncerramento
           ControlMemberName = 'Text1'
         end
         item
-          SourceMemberName = 'Geral'
+          SourceMemberName = 'total'
           ControlMemberName = 'Text2'
         end>
       FillHeaderExpressions = <>

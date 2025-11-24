@@ -1,53 +1,65 @@
 ﻿[ToolBar2]
-Coordinates=217,276,67,36
+Coordinates=217,276,58,33
 
 [SpeedButton5]
-Coordinates=127,10,96,58
+Coordinates=127,10,84,51
 
 [spImprime]
-Coordinates=295,10,74,58
+Coordinates=295,10,66,51
 
 [lbltotal]
-Coordinates=640,260,52,58
+Coordinates=640,260,48,51
 
 [rect_destImpressao]
-Coordinates=80,276,127,36
+Coordinates=80,276,111,33
 
 [Layout1]
-Coordinates=10,276,60,36
+Coordinates=10,276,53,33
 
 []
 Coordinates=118,222,82,33
 
 [dmLocal.memSAbor]
-Coordinates=365,312,130,146
+Coordinates=365,312,114,123
 
 [dmLocal.qrGrupos]
-Coordinates=118,80,120,146
+Coordinates=118,80,106,123
 
 [dmLocal.qrProdutos]
-Coordinates=482,1,130,388
+Coordinates=482,1,115,321
 
 [dmLocal.qrImpressora]
-Coordinates=319,80,142,256
+Coordinates=319,80,125,213
 
 [dmLocal.memPedido]
-Coordinates=210,328,135,344
+Coordinates=210,328,117,285
 
 [dmLocal.dtsLinkPedido]
-Coordinates=71,328,148,36
+Coordinates=71,328,130,33
 
 [dmLocal.qrVendas]
-Coordinates=760,0,122,36
+Coordinates=760,0,106,33
 Visible=False
 
 [lsvdetalhes]
-Coordinates=510,-20,107,256
+Coordinates=630,-20,89,213
 Visible=True
 
 [BindSourceDB1]
-Coordinates=760,0,110,278
+Coordinates=860,-30,92,231
 
 [BindingsList1]
-Coordinates=0,0,91,36
+Coordinates=0,0,82,33
+
+[lblConferencia]
+Coordinates=0,0,85,51
+
+[SpeedButton1]
+Coordinates=18,77,84,51
+
+[dmLocal.qrEncerra]
+Coordinates=533,529,108,87
+
+[dmLocal.qrCabecalho]
+Coordinates=533,408,121,87
 

@@ -119,7 +119,8 @@ Coordinates=349,1,49,51
 Coordinates=231,1,80,51
 
 [dmLocal.qrImpressora]
-Coordinates=186,142,125,213
+Coordinates=186,142,125,33
+Visible=False
 
 [frmDestinoImp.BindSourceDB1]
 Coordinates=87,1,168,141
@@ -128,16 +129,16 @@ Coordinates=87,1,168,141
 Coordinates=541,762,157,339
 
 [frmProdutos.BindSourceDB2]
-Coordinates=662,709,157,33
+Coordinates=662,709,157,303
 
 [frmProdutos.BindSourceDB3]
-Coordinates=659,501,157,123
+Coordinates=659,501,157,141
 
 [frmProdutos.BindSourceDB4]
 Coordinates=87,1,157,141
 
 [frmDetalhe.BindSourceDB1]
-Coordinates=186,142,149,231
+Coordinates=77,464,149,231
 
 [Label3]
 Coordinates=231,1,46,51
@@ -147,5 +148,17 @@ Coordinates=535,365,108,33
 Visible=False
 
 [frmEncerramento.BindSourceDB1]
-Coordinates=680,300,181,105
+Coordinates=535,365,181,105
+
+[dmLocal.qrCabecalho]
+Coordinates=253,161,121,87
+
+[Image5]
+Coordinates=429,1,49,51
+
+[ListBoxItem4]
+Coordinates=436,71,79,33
+
+[frmConfImpressora.BindSourceDB1]
+Coordinates=193,373,191,231
 

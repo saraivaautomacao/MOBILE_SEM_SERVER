@@ -75,7 +75,7 @@ procedure TfrmCabecalho.rect_save_configClick(Sender: TObject);
 begin
   if dmlocal.qrcabecalho.State in [dsedit,dsinsert] then
    dmlocal.qrcabecalho.post;
-
+   close;
 end;
 
 end.

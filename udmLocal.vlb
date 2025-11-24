@@ -202,3 +202,21 @@ Coordinates=844,157,118,33
 [qrEncerra]
 Coordinates=390,0,63,87
 
+[qrCabecalho]
+Coordinates=299,281,76,87
+
+[qrCabecalhocabecalho2]
+Coordinates=770,261,132,33
+
+[qrCabecalhocabecalho1]
+Coordinates=770,313,132,33
+
+[qrEncerralkmesa]
+Coordinates=300,699,97,33
+
+[qrVendastotal]
+Coordinates=717,157,83,33
+
+[qrEncerratotal]
+Coordinates=717,417,84,33
+
