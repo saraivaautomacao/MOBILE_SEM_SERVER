@@ -84,10 +84,13 @@ type
     qrVendasSomaTotal: TAggregateField;
     qrEncerra: TFDQuery;
     qrVendastotal: TBCDField;
-    qrEncerralkmesa: TStringField;
     qrCabecalho: TFDQuery;
     qrCabecalhocabecalho1: TStringField;
     qrCabecalhocabecalho2: TStringField;
+    qrEncerralkmesa: TStringField;
+    qrResumo_vendas: TFDQuery;
+    qrResumo_vendaslkmesa: TStringField;
+    qrResumo_vendastotal: TBCDField;
     qrEncerratotal: TBCDField;
     procedure DataModuleCreate(Sender: TObject);
   private
@@ -101,6 +104,7 @@ var
   dmLocal: TdmLocal;
   Config:TConfigVo;
   CodigoVEndedor:String='1';
+  Atendente:string;
 implementation
 
 {%CLASSGROUP 'FMX.Controls.TControl'}
@@ -110,7 +114,7 @@ implementation
 procedure TdmLocal.DataModuleCreate(Sender: TObject);
 
 begin
-
+     ACBrPosPrinter1.Device.TimeOut := 3000;
      with ConLocal do
     begin
         {$IFDEF MSWINDOWS}

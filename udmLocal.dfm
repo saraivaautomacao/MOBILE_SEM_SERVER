@@ -2388,8 +2388,8 @@ object dmLocal: TdmLocal
     UpdateOptions.CheckRequired = False
     UpdateOptions.AutoCommitUpdates = True
     StoreDefs = True
-    Left = 352
-    Top = 152
+    Left = 344
+    Top = 144
     object memSAborlkmesa: TStringField
       FieldName = 'lkmesa'
       Size = 3
@@ -2555,6 +2555,7 @@ object dmLocal: TdmLocal
     object qrVendastotal: TBCDField
       FieldName = 'total'
       Origin = 'total'
+      currency = True
       Precision = 10
       Size = 2
     end
@@ -2570,21 +2571,23 @@ object dmLocal: TdmLocal
   object qrEncerra: TFDQuery
     Connection = conLocal
     SQL.Strings = (
-      'select lkmesa,total'
-      'from vendas'
-      'group by lkmesa')
+      'select lkmesa, total'
+      'from vendas_resumo'
+      'order by lkmesa')
     Left = 264
     Top = 152
     object qrEncerralkmesa: TStringField
       FieldName = 'lkmesa'
       Origin = 'lkmesa'
+      Required = True
       Size = 3
     end
     object qrEncerratotal: TBCDField
       FieldName = 'total'
       Origin = 'total'
+      Required = True
       currency = True
-      Precision = 10
+      Precision = 14
       Size = 2
     end
   end
@@ -2592,8 +2595,8 @@ object dmLocal: TdmLocal
     Connection = conLocal
     SQL.Strings = (
       'select * from cabecalho')
-    Left = 24
-    Top = 232
+    Left = 48
+    Top = 216
     object qrCabecalhocabecalho1: TStringField
       FieldName = 'cabecalho1'
       Origin = 'cabecalho1'
@@ -2603,6 +2606,35 @@ object dmLocal: TdmLocal
       FieldName = 'cabecalho2'
       Origin = 'cabecalho2'
       Size = 45
+    end
+  end
+  object qrResumo_vendas: TFDQuery
+    Connection = conLocal
+    SQL.Strings = (
+      'select lkmesa,total from vendas_resumo'
+      'where lkmesa=:lkmesa')
+    Left = 152
+    Top = 216
+    ParamData = <
+      item
+        Name = 'LKMESA'
+        DataType = ftString
+        FDDataType = dtWideString
+        ParamType = ptInput
+        Value = Null
+      end>
+    object qrResumo_vendaslkmesa: TStringField
+      FieldName = 'lkmesa'
+      Origin = 'lkmesa'
+      Size = 3
+    end
+    object qrResumo_vendastotal: TBCDField
+      FieldName = 'total'
+      Origin = 'total'
+      Required = True
+      currency = True
+      Precision = 14
+      Size = 2
     end
   end
 end

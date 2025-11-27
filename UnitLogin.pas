@@ -93,6 +93,7 @@ begin
         fancy.Show(TIconDialog.Warning, 'Aviso','Informe usuario', 'OK');
         exit;
     end;
+     udmLocal.Atendente:=edt_usuario.text;
     if Uppercase(edt_usuario.Text)<>'MASTER' then
     begin
         Var  tmpDataset:TDataset;
@@ -104,6 +105,7 @@ begin
              exit;
          end;
          udmLocal.CodigoVEndedor:=tmpDAtaset.FieldByName('codigo').AsString;
+
     end;
     var  NS: TNetworkState:=TNetworkState.create;
     try

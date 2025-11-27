@@ -30,6 +30,8 @@ type
     procedure rect_impClick(Sender: TObject);
     procedure btnVoltarClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure lsvDestinoButtonClick(const Sender: TObject;
+      const AItem: TListItem; const AObject: TListItemSimpleControl);
   private
     { Private declarations }
   public
@@ -79,6 +81,18 @@ begin
        dmLocal.qrImpressora.next;
    end;
 
+end;
+
+procedure TfrmDestinoImp.lsvDestinoButtonClick(const Sender: TObject;
+  const AItem: TListItem; const AObject: TListItemSimpleControl);
+begin
+ if dmLocal.qrGruposlocal.asString<>emptystr then
+ begin
+   dmLocal.qrGrupos.edit;
+   dmLocal.qrGruposidimpressora.asinteger:= 0;
+   dmLocal.qrGruposlocal.asString:= '';
+   dmlocal.qrGrupos.ApplyUpdates(-1);
+ end;
 end;
 
 procedure TfrmDestinoImp.rect_impClick(Sender: TObject);

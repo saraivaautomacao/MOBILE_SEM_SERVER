@@ -38,7 +38,7 @@ Coordinates=588,209,109,33
 Coordinates=16,106,50,33
 
 []
-Coordinates=717,157,83,33
+Coordinates=300,699,97,33
 
 [qrProdutoscoddest]
 Coordinates=170,1,109,33
@@ -211,12 +211,21 @@ Coordinates=770,261,132,33
 [qrCabecalhocabecalho1]
 Coordinates=770,313,132,33
 
-[qrEncerralkmesa]
-Coordinates=300,699,97,33
-
 [qrVendastotal]
 Coordinates=717,157,83,33
 
+[qrEncerralkmesa]
+Coordinates=300,699,97,33
+
+[qrResumo_vendastotal]
+Coordinates=770,365,128,33
+
+[qrResumo_vendaslkmesa]
+Coordinates=770,417,141,33
+
+[qrResumo_vendas]
+Coordinates=637,569,106,87
+
 [qrEncerratotal]
-Coordinates=717,417,84,33
+Coordinates=717,469,84,33
 

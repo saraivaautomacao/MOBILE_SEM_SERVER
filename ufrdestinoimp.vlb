@@ -63,3 +63,12 @@ Coordinates=37,350,82,33
 [dmLocal.qrVendas]
 Coordinates=442,1,106,213
 
+[dmLocal.qrCabecalho]
+Coordinates=504,418,121,87
+
+[dmLocal.qrResumo_vendas]
+Coordinates=289,417,151,87
+
+[dmLocal.qrEncerra]
+Coordinates=442,539,108,87
+

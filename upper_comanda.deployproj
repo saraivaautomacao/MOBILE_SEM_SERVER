@@ -4,14 +4,14 @@
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>
     <PropertyGroup>
-        <DeviceId Condition="'$(Platform)'=='Android'">RQCW407BGBB</DeviceId>
+        <DeviceId Condition="'$(Platform)'=='Android'"/>
         <DeviceId Condition="'$(Platform)'=='Android64'">RQCW407BGBB</DeviceId>
         <DeviceId Condition="'$(Platform)'=='iOSDevice64'"/>
         <DeviceId Condition="'$(Platform)'=='iOSSimARM64'"/>
     </PropertyGroup>
     <ItemGroup Condition="'$(Platform)'=='Android64'">
         <DeployFile Include="Android64\Release\strings.xml" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\values\</RemoteDir>
+            <RemoteDir>upper_comanda\res\values\</RemoteDir>
             <RemoteName>strings.xml</RemoteName>
             <DeployClass>Android_Strings</DeployClass>
             <Operation>1</Operation>
@@ -19,8 +19,17 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="Android64\Release\upper_comanda.classes" Condition="'$(Config)'=='Release'">
+            <RemoteDir>upper_comanda\classes\</RemoteDir>
+            <RemoteName>upper_comanda.classes</RemoteName>
+            <DeployClass>AndroidClasses</DeployClass>
+            <Operation>64</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_72x72.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-hdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-hdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon72</DeployClass>
             <Operation>1</Operation>
@@ -29,7 +38,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android64\Release\splash_image_def.xml" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable\</RemoteDir>
             <RemoteName>splash_image_def.xml</RemoteName>
             <DeployClass>AndroidSplashImageDef</DeployClass>
             <Operation>1</Operation>
@@ -38,7 +47,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_48x48.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-mdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-mdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon48</DeployClass>
             <Operation>1</Operation>
@@ -47,7 +56,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_640x480.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-large\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-large\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage640</DeployClass>
             <Operation>1</Operation>
@@ -56,7 +65,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="images\icones\rest36x36.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-ldpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-ldpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon36</DeployClass>
             <Operation>1</Operation>
@@ -65,7 +74,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\lib\android\debug\mips\libnative-activity.so" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\library\lib\mips\</RemoteDir>
+            <RemoteDir>upper_comanda\library\lib\mips\</RemoteDir>
             <RemoteName>libComanda.so</RemoteName>
             <DeployClass>AndroidLibnativeMipsFile</DeployClass>
             <Operation>1</Operation>
@@ -74,7 +83,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\lib\android\debug\mips\libnative-activity.so" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\library\lib\mips\</RemoteDir>
+            <RemoteDir>upper_comanda\library\lib\mips\</RemoteDir>
             <RemoteName>libComanda.so</RemoteName>
             <DeployClass>AndroidLibnativeMipsFile</DeployClass>
             <Operation>1</Operation>
@@ -83,7 +92,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\lib\android\debug\armeabi-v7a\libnative-activity.so" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\library\lib\armeabi-v7a\</RemoteDir>
+            <RemoteDir>upper_comanda\library\lib\armeabi-v7a\</RemoteDir>
             <RemoteName>libComanda.so</RemoteName>
             <DeployClass>AndroidLibnativeArmeabiv7aFile</DeployClass>
             <Operation>1</Operation>
@@ -92,7 +101,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\lib\android\debug\armeabi-v7a\libnative-activity.so" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\library\lib\armeabi-v7a\</RemoteDir>
+            <RemoteDir>upper_comanda\library\lib\armeabi-v7a\</RemoteDir>
             <RemoteName>libComanda.so</RemoteName>
             <DeployClass>AndroidLibnativeArmeabiv7aFile</DeployClass>
             <Operation>1</Operation>
@@ -101,7 +110,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android64\Release\styles-v21.xml" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\values-v21\</RemoteDir>
+            <RemoteDir>upper_comanda\res\values-v21\</RemoteDir>
             <RemoteName>styles.xml</RemoteName>
             <DeployClass>AndroidSplashStylesV21</DeployClass>
             <Operation>1</Operation>
@@ -110,7 +119,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android64\Debug\styles.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\values\</RemoteDir>
+            <RemoteDir>upper_comanda\res\values\</RemoteDir>
             <RemoteName>styles.xml</RemoteName>
             <DeployClass>AndroidSplashStyles</DeployClass>
             <Operation>1</Operation>
@@ -119,7 +128,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android64\Release\colors-night-v21.xml" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\values-night-v21\</RemoteDir>
+            <RemoteDir>upper_comanda\res\values-night-v21\</RemoteDir>
             <RemoteName>colors.xml</RemoteName>
             <DeployClass>Android_ColorsDark</DeployClass>
             <Operation>1</Operation>
@@ -128,7 +137,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android64\Debug\AndroidManifest.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\</RemoteDir>
+            <RemoteDir>upper_comanda\</RemoteDir>
             <RemoteName>AndroidManifest.xml</RemoteName>
             <DeployClass>ProjectAndroidManifest</DeployClass>
             <Operation>1</Operation>
@@ -137,7 +146,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-xxxhdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-xxxhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon192</DeployClass>
             <Operation>1</Operation>
@@ -145,18 +154,8 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="Android64\Release\libComanda.so" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\library\lib\arm64-v8a\</RemoteDir>
-            <RemoteName>libComanda.so</RemoteName>
-            <DeployClass>ProjectOutput</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-            <Required>True</Required>
-        </DeployFile>
         <DeployFile Include="Android64\Debug\colors-night-v21.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\values-night-v21\</RemoteDir>
+            <RemoteDir>upper_comanda\res\values-night-v21\</RemoteDir>
             <RemoteName>colors.xml</RemoteName>
             <DeployClass>Android_ColorsDark</DeployClass>
             <Operation>1</Operation>
@@ -165,7 +164,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_48x48.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-xhdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-xhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon48</DeployClass>
             <Operation>1</Operation>
@@ -174,7 +173,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_48x48.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-xhdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-xhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon48</DeployClass>
             <Operation>1</Operation>
@@ -183,7 +182,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\lib\android\debug\armeabi\libnative-activity.so" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\library\lib\armeabi\</RemoteDir>
+            <RemoteDir>upper_comanda\library\lib\armeabi\</RemoteDir>
             <RemoteName>libComanda.so</RemoteName>
             <DeployClass>AndroidLibnativeArmeabiFile</DeployClass>
             <Operation>1</Operation>
@@ -192,7 +191,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\lib\android\debug\armeabi\libnative-activity.so" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\library\lib\armeabi\</RemoteDir>
+            <RemoteDir>upper_comanda\library\lib\armeabi\</RemoteDir>
             <RemoteName>libComanda.so</RemoteName>
             <DeployClass>AndroidLibnativeArmeabiFile</DeployClass>
             <Operation>1</Operation>
@@ -201,7 +200,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="images\icones\FM_LauncherIcon_96x96.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-xhdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-xhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon96</DeployClass>
             <Operation>1</Operation>
@@ -210,7 +209,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android64\Debug\colors.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\values\</RemoteDir>
+            <RemoteDir>upper_comanda\res\values\</RemoteDir>
             <RemoteName>colors.xml</RemoteName>
             <DeployClass>Android_Colors</DeployClass>
             <Operation>1</Operation>
@@ -219,7 +218,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="images\FM_SplashImage_960x720.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-xlarge\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-xlarge\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage960</DeployClass>
             <Operation>1</Operation>
@@ -228,7 +227,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="images\FM_SplashImage_426x320.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-small\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-small\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage426</DeployClass>
             <Operation>1</Operation>
@@ -237,7 +236,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android64\Debug\strings.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\values\</RemoteDir>
+            <RemoteDir>upper_comanda\res\values\</RemoteDir>
             <RemoteName>strings.xml</RemoteName>
             <DeployClass>Android_Strings</DeployClass>
             <Operation>1</Operation>
@@ -246,7 +245,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="images\icones\FM_LauncherIcon_48x48.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-mdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-mdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon48</DeployClass>
             <Operation>1</Operation>
@@ -255,7 +254,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="images\FM_SplashImage_640x480.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-large\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-large\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage640</DeployClass>
             <Operation>1</Operation>
@@ -264,7 +263,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_470x320.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-normal\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-normal\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage470</DeployClass>
             <Operation>1</Operation>
@@ -273,7 +272,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Banco\rest.db" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\</RemoteDir>
+            <RemoteDir>upper_comanda\</RemoteDir>
             <RemoteName>rest.db</RemoteName>
             <DeployClass>File</DeployClass>
             <Operation>0</Operation>
@@ -282,7 +281,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="images\icones\FM_LauncherIcon_192x192.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-xxxhdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-xxxhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon192</DeployClass>
             <Operation>1</Operation>
@@ -291,7 +290,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android64\Release\colors.xml" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\values\</RemoteDir>
+            <RemoteDir>upper_comanda\res\values\</RemoteDir>
             <RemoteName>colors.xml</RemoteName>
             <DeployClass>Android_Colors</DeployClass>
             <Operation>1</Operation>
@@ -300,7 +299,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_144x144.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-xxhdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-xxhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon144</DeployClass>
             <Operation>1</Operation>
@@ -308,8 +307,18 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="Android64\Release\libupper_comanda.so" Condition="'$(Config)'=='Release'">
+            <RemoteDir>upper_comanda\library\lib\arm64-v8a\</RemoteDir>
+            <RemoteName>libupper_comanda.so</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_96x96.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-xxxhdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-xxxhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon96</DeployClass>
             <Operation>1</Operation>
@@ -318,7 +327,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_96x96.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-xxxhdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-xxxhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon96</DeployClass>
             <Operation>1</Operation>
@@ -326,17 +335,8 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="Android64\Release\Comanda.classes" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\classes\</RemoteDir>
-            <RemoteName>Comanda.classes</RemoteName>
-            <DeployClass>AndroidClasses</DeployClass>
-            <Operation>64</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_36x36.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-ldpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-ldpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon36</DeployClass>
             <Operation>1</Operation>
@@ -345,7 +345,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="images\icones\FM_LauncherIcon_72x72.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-hdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-hdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon72</DeployClass>
             <Operation>1</Operation>
@@ -353,8 +353,18 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="Android64\Debug\libupper_comanda.so" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>upper_comanda\library\lib\arm64-v8a\</RemoteDir>
+            <RemoteName>libupper_comanda.so</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
         <DeployFile Include="banco\rest.db" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\assets\internal\</RemoteDir>
+            <RemoteDir>upper_comanda\assets\internal\</RemoteDir>
             <RemoteName>rest.db</RemoteName>
             <DeployClass>File</DeployClass>
             <Operation>0</Operation>
@@ -363,7 +373,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android64\Release\AndroidManifest.xml" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\</RemoteDir>
+            <RemoteDir>upper_comanda\</RemoteDir>
             <RemoteName>AndroidManifest.xml</RemoteName>
             <DeployClass>ProjectAndroidManifest</DeployClass>
             <Operation>1</Operation>
@@ -372,7 +382,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_36x36.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-hdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-hdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon36</DeployClass>
             <Operation>1</Operation>
@@ -381,7 +391,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_36x36.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-hdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-hdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon36</DeployClass>
             <Operation>1</Operation>
@@ -390,7 +400,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android64\Debug\splash_image_def.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable\</RemoteDir>
             <RemoteName>splash_image_def.xml</RemoteName>
             <DeployClass>AndroidSplashImageDef</DeployClass>
             <Operation>1</Operation>
@@ -398,18 +408,8 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="Android64\Debug\libComanda.so" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\library\lib\arm64-v8a\</RemoteDir>
-            <RemoteName>libComanda.so</RemoteName>
-            <DeployClass>ProjectOutput</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-            <Required>True</Required>
-        </DeployFile>
         <DeployFile Include="Android64\Release\styles.xml" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\values\</RemoteDir>
+            <RemoteDir>upper_comanda\res\values\</RemoteDir>
             <RemoteName>styles.xml</RemoteName>
             <DeployClass>AndroidSplashStyles</DeployClass>
             <Operation>1</Operation>
@@ -418,7 +418,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_96x96.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-xhdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-xhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon96</DeployClass>
             <Operation>1</Operation>
@@ -427,7 +427,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_24x24.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-mdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-mdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon24</DeployClass>
             <Operation>1</Operation>
@@ -436,7 +436,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_24x24.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-mdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-mdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon24</DeployClass>
             <Operation>1</Operation>
@@ -445,7 +445,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_960x720.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-xlarge\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-xlarge\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage960</DeployClass>
             <Operation>1</Operation>
@@ -454,7 +454,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_426x320.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-small\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-small\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage426</DeployClass>
             <Operation>1</Operation>
@@ -463,7 +463,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android64\Debug\Comanda.classes" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\classes\</RemoteDir>
+            <RemoteDir>upper_comanda\classes\</RemoteDir>
             <RemoteName>Comanda.classes</RemoteName>
             <DeployClass>AndroidClasses</DeployClass>
             <Operation>64</Operation>
@@ -472,7 +472,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="images\FM_SplashImage_470x320.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-normal\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-normal\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage470</DeployClass>
             <Operation>1</Operation>
@@ -481,7 +481,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="images\icones\FM_LauncherIcon_144x144.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-xxhdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-xxhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon144</DeployClass>
             <Operation>1</Operation>
@@ -490,7 +490,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android64\Debug\styles-v21.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\values-v21\</RemoteDir>
+            <RemoteDir>upper_comanda\res\values-v21\</RemoteDir>
             <RemoteName>styles.xml</RemoteName>
             <DeployClass>AndroidSplashStylesV21</DeployClass>
             <Operation>1</Operation>
@@ -499,7 +499,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_72x72.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-xxhdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-xxhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon72</DeployClass>
             <Operation>1</Operation>
@@ -508,7 +508,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_72x72.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-xxhdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-xxhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon72</DeployClass>
             <Operation>1</Operation>
@@ -519,7 +519,7 @@
     </ItemGroup>
     <ItemGroup Condition="'$(Platform)'=='Win32'">
         <DeployFile Include="Banco\rest.db" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\</RemoteDir>
+            <RemoteDir>upper_comanda\</RemoteDir>
             <RemoteName>rest.db</RemoteName>
             <DeployClass>File</DeployClass>
             <Operation>0</Operation>
@@ -530,7 +530,7 @@
     </ItemGroup>
     <ItemGroup Condition="'$(Platform)'=='Android'">
         <DeployFile Include="Android\Debug\colors.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\values\</RemoteDir>
+            <RemoteDir>upper_comanda\res\values\</RemoteDir>
             <RemoteName>colors.xml</RemoteName>
             <DeployClass>Android_Colors</DeployClass>
             <Operation>1</Operation>
@@ -539,7 +539,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_72x72.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-hdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-hdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon72</DeployClass>
             <Operation>1</Operation>
@@ -548,7 +548,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android\Release\strings.xml" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\values\</RemoteDir>
+            <RemoteDir>upper_comanda\res\values\</RemoteDir>
             <RemoteName>strings.xml</RemoteName>
             <DeployClass>Android_Strings</DeployClass>
             <Operation>1</Operation>
@@ -557,7 +557,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android\Release\styles-v21.xml" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\values-v21\</RemoteDir>
+            <RemoteDir>upper_comanda\res\values-v21\</RemoteDir>
             <RemoteName>styles.xml</RemoteName>
             <DeployClass>AndroidSplashStylesV21</DeployClass>
             <Operation>1</Operation>
@@ -565,8 +565,18 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="Android\Debug\libupper_comanda.so" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>upper_comanda\library\lib\armeabi-v7a\</RemoteDir>
+            <RemoteName>libupper_comanda.so</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
         <DeployFile Include="Android\Debug\Comanda.classes" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\classes\</RemoteDir>
+            <RemoteDir>upper_comanda\classes\</RemoteDir>
             <RemoteName>Comanda.classes</RemoteName>
             <DeployClass>AndroidClasses</DeployClass>
             <Operation>64</Operation>
@@ -575,7 +585,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_36x36.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-ldpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-ldpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon36</DeployClass>
             <Operation>1</Operation>
@@ -584,7 +594,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android\Release\splash_image_def.xml" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable\</RemoteDir>
             <RemoteName>splash_image_def.xml</RemoteName>
             <DeployClass>AndroidSplashImageDef</DeployClass>
             <Operation>1</Operation>
@@ -592,8 +602,18 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="Android\Release\libupper_comanda.so" Condition="'$(Config)'=='Release'">
+            <RemoteDir>upper_comanda\library\lib\armeabi-v7a\</RemoteDir>
+            <RemoteName>libupper_comanda.so</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
         <DeployFile Include="$(NDKBasePath)\prebuilt\android-arm\gdbserver\gdbserver" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\library\lib\armeabi-v7a\</RemoteDir>
+            <RemoteDir>upper_comanda\library\lib\armeabi-v7a\</RemoteDir>
             <RemoteName>gdbserver</RemoteName>
             <DeployClass>AndroidGDBServer</DeployClass>
             <Operation>1</Operation>
@@ -602,7 +622,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_470x320.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-normal\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-normal\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage470</DeployClass>
             <Operation>1</Operation>
@@ -611,7 +631,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(NDKBasePath)\prebuilt\android-arm\gdbserver\gdbserver" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\library\lib\armeabi-v7a\</RemoteDir>
+            <RemoteDir>upper_comanda\library\lib\armeabi-v7a\</RemoteDir>
             <RemoteName>gdbserver</RemoteName>
             <DeployClass>AndroidGDBServer</DeployClass>
             <Operation>1</Operation>
@@ -620,7 +640,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_72x72.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-xxhdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-xxhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon72</DeployClass>
             <Operation>1</Operation>
@@ -629,7 +649,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_72x72.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-xxhdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-xxhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon72</DeployClass>
             <Operation>1</Operation>
@@ -638,7 +658,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_144x144.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-xxhdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-xxhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon144</DeployClass>
             <Operation>1</Operation>
@@ -647,7 +667,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-xxxhdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-xxxhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon192</DeployClass>
             <Operation>1</Operation>
@@ -656,7 +676,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_96x96.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-xhdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-xhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon96</DeployClass>
             <Operation>1</Operation>
@@ -665,7 +685,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android\Debug\AndroidManifest.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\</RemoteDir>
+            <RemoteDir>upper_comanda\</RemoteDir>
             <RemoteName>AndroidManifest.xml</RemoteName>
             <DeployClass>ProjectAndroidManifest</DeployClass>
             <Operation>1</Operation>
@@ -674,7 +694,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android\Debug\styles.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\values\</RemoteDir>
+            <RemoteDir>upper_comanda\res\values\</RemoteDir>
             <RemoteName>styles.xml</RemoteName>
             <DeployClass>AndroidSplashStyles</DeployClass>
             <Operation>1</Operation>
@@ -683,7 +703,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="images\FM_SplashImage_960x720.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-xlarge\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-xlarge\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage960</DeployClass>
             <Operation>1</Operation>
@@ -692,7 +712,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_24x24.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-mdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-mdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon24</DeployClass>
             <Operation>1</Operation>
@@ -701,7 +721,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_24x24.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-mdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-mdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon24</DeployClass>
             <Operation>1</Operation>
@@ -710,7 +730,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_426x320.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-small\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-small\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage426</DeployClass>
             <Operation>1</Operation>
@@ -719,7 +739,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\lib\android\debug\mips\libnative-activity.so" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\library\lib\mips\</RemoteDir>
+            <RemoteDir>upper_comanda\library\lib\mips\</RemoteDir>
             <RemoteName>libComanda.so</RemoteName>
             <DeployClass>AndroidLibnativeMipsFile</DeployClass>
             <Operation>1</Operation>
@@ -728,7 +748,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\lib\android\debug\mips\libnative-activity.so" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\library\lib\mips\</RemoteDir>
+            <RemoteDir>upper_comanda\library\lib\mips\</RemoteDir>
             <RemoteName>libComanda.so</RemoteName>
             <DeployClass>AndroidLibnativeMipsFile</DeployClass>
             <Operation>1</Operation>
@@ -737,7 +757,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="images\FM_SplashImage_470x320.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-normal\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-normal\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage470</DeployClass>
             <Operation>1</Operation>
@@ -746,7 +766,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="images\icones\FM_LauncherIcon_192x192.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-xxxhdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-xxxhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon192</DeployClass>
             <Operation>1</Operation>
@@ -755,7 +775,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="images\icones\FM_LauncherIcon_72x72.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-hdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-hdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon72</DeployClass>
             <Operation>1</Operation>
@@ -764,7 +784,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Banco\rest.db" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\</RemoteDir>
+            <RemoteDir>upper_comanda\</RemoteDir>
             <RemoteName>rest.db</RemoteName>
             <DeployClass>File</DeployClass>
             <Operation>0</Operation>
@@ -773,7 +793,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_640x480.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-large\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-large\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage640</DeployClass>
             <Operation>1</Operation>
@@ -782,7 +802,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="images\icones\rest36x36.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-ldpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-ldpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon36</DeployClass>
             <Operation>1</Operation>
@@ -791,7 +811,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android\Debug\strings.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\values\</RemoteDir>
+            <RemoteDir>upper_comanda\res\values\</RemoteDir>
             <RemoteName>strings.xml</RemoteName>
             <DeployClass>Android_Strings</DeployClass>
             <Operation>1</Operation>
@@ -800,7 +820,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android\Debug\splash_image_def.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable\</RemoteDir>
             <RemoteName>splash_image_def.xml</RemoteName>
             <DeployClass>AndroidSplashImageDef</DeployClass>
             <Operation>1</Operation>
@@ -809,7 +829,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="images\icones\FM_LauncherIcon_48x48.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-mdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-mdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon48</DeployClass>
             <Operation>1</Operation>
@@ -818,7 +838,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android\Release\styles.xml" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\values\</RemoteDir>
+            <RemoteDir>upper_comanda\res\values\</RemoteDir>
             <RemoteName>styles.xml</RemoteName>
             <DeployClass>AndroidSplashStyles</DeployClass>
             <Operation>1</Operation>
@@ -827,7 +847,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android\Release\Comanda.classes" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\classes\</RemoteDir>
+            <RemoteDir>upper_comanda\classes\</RemoteDir>
             <RemoteName>Comanda.classes</RemoteName>
             <DeployClass>AndroidClasses</DeployClass>
             <Operation>64</Operation>
@@ -836,7 +856,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_48x48.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-mdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-mdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon48</DeployClass>
             <Operation>1</Operation>
@@ -845,7 +865,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_960x720.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-xlarge\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-xlarge\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage960</DeployClass>
             <Operation>1</Operation>
@@ -854,7 +874,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_48x48.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-xhdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-xhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon48</DeployClass>
             <Operation>1</Operation>
@@ -863,7 +883,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_48x48.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-xhdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-xhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon48</DeployClass>
             <Operation>1</Operation>
@@ -872,7 +892,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android\Debug\styles-v21.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\values-v21\</RemoteDir>
+            <RemoteDir>upper_comanda\res\values-v21\</RemoteDir>
             <RemoteName>styles.xml</RemoteName>
             <DeployClass>AndroidSplashStylesV21</DeployClass>
             <Operation>1</Operation>
@@ -881,7 +901,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\lib\android\debug\armeabi\libnative-activity.so" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\library\lib\armeabi\</RemoteDir>
+            <RemoteDir>upper_comanda\library\lib\armeabi\</RemoteDir>
             <RemoteName>libComanda.so</RemoteName>
             <DeployClass>AndroidLibnativeArmeabiFile</DeployClass>
             <Operation>1</Operation>
@@ -890,7 +910,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\lib\android\debug\armeabi\libnative-activity.so" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\library\lib\armeabi\</RemoteDir>
+            <RemoteDir>upper_comanda\library\lib\armeabi\</RemoteDir>
             <RemoteName>libComanda.so</RemoteName>
             <DeployClass>AndroidLibnativeArmeabiFile</DeployClass>
             <Operation>1</Operation>
@@ -899,7 +919,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android\Release\colors-night-v21.xml" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\values-night-v21\</RemoteDir>
+            <RemoteDir>upper_comanda\res\values-night-v21\</RemoteDir>
             <RemoteName>colors.xml</RemoteName>
             <DeployClass>Android_ColorsDark</DeployClass>
             <Operation>1</Operation>
@@ -908,7 +928,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_36x36.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-hdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-hdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon36</DeployClass>
             <Operation>1</Operation>
@@ -917,7 +937,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_36x36.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-hdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-hdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon36</DeployClass>
             <Operation>1</Operation>
@@ -926,7 +946,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="images\FM_SplashImage_426x320.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-small\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-small\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage426</DeployClass>
             <Operation>1</Operation>
@@ -935,7 +955,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Banco\rest.db" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\assets\internal\</RemoteDir>
+            <RemoteDir>upper_comanda\assets\internal\</RemoteDir>
             <RemoteName>rest.db</RemoteName>
             <DeployClass>File</DeployClass>
             <Operation>0</Operation>
@@ -944,7 +964,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android\Release\colors.xml" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\values\</RemoteDir>
+            <RemoteDir>upper_comanda\res\values\</RemoteDir>
             <RemoteName>colors.xml</RemoteName>
             <DeployClass>Android_Colors</DeployClass>
             <Operation>1</Operation>
@@ -953,7 +973,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android\Debug\colors-night-v21.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\values-night-v21\</RemoteDir>
+            <RemoteDir>upper_comanda\res\values-night-v21\</RemoteDir>
             <RemoteName>colors.xml</RemoteName>
             <DeployClass>Android_ColorsDark</DeployClass>
             <Operation>1</Operation>
@@ -962,7 +982,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_96x96.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\res\drawable-xxxhdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-xxxhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon96</DeployClass>
             <Operation>1</Operation>
@@ -971,7 +991,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_96x96.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-xxxhdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-xxxhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon96</DeployClass>
             <Operation>1</Operation>
@@ -979,18 +999,8 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="Android\Debug\libComanda.so" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\library\lib\armeabi-v7a\</RemoteDir>
-            <RemoteName>libComanda.so</RemoteName>
-            <DeployClass>ProjectOutput</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-            <Required>True</Required>
-        </DeployFile>
         <DeployFile Include="images\icones\FM_LauncherIcon_96x96.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-xhdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-xhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon96</DeployClass>
             <Operation>1</Operation>
@@ -999,7 +1009,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="images\icones\FM_LauncherIcon_144x144.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-xxhdpi\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-xxhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon144</DeployClass>
             <Operation>1</Operation>
@@ -1008,7 +1018,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android\Release\AndroidManifest.xml" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\</RemoteDir>
+            <RemoteDir>upper_comanda\</RemoteDir>
             <RemoteName>AndroidManifest.xml</RemoteName>
             <DeployClass>ProjectAndroidManifest</DeployClass>
             <Operation>1</Operation>
@@ -1016,18 +1026,8 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="Android\Release\libComanda.so" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\library\lib\armeabi-v7a\</RemoteDir>
-            <RemoteName>libComanda.so</RemoteName>
-            <DeployClass>ProjectOutput</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-            <Required>True</Required>
-        </DeployFile>
         <DeployFile Include="images\FM_SplashImage_640x480.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Comanda\res\drawable-large\</RemoteDir>
+            <RemoteDir>upper_comanda\res\drawable-large\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage640</DeployClass>
             <Operation>1</Operation>
@@ -1038,7 +1038,7 @@
     </ItemGroup>
     <ItemGroup Condition="'$(Platform)'=='Win64'">
         <DeployFile Include="Banco\rest.db" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda\</RemoteDir>
+            <RemoteDir>upper_comanda\</RemoteDir>
             <RemoteName>rest.db</RemoteName>
             <DeployClass>File</DeployClass>
             <Operation>0</Operation>
@@ -1050,7 +1050,7 @@
     <ItemGroup Condition="'$(Platform)'=='Win64x'"/>
     <ItemGroup Condition="'$(Platform)'=='iOSDevice64'">
         <DeployFile Include="Banco\rest.db" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>Comanda.app\</RemoteDir>
+            <RemoteDir>upper_comanda.app\</RemoteDir>
             <RemoteName>rest.db</RemoteName>
             <DeployClass>File</DeployClass>
             <Operation>0</Operation>

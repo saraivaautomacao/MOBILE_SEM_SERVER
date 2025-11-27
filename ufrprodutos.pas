@@ -201,7 +201,12 @@ begin
                  end;
                   //configuracao da impressora direcionada
                  qrimpressora.locate('local',qrGruposlocal.asString);
-
+                 if trim(qrImpressoraporta.asString)=emptystr Then
+                 begin
+                    qrgrupos.next;
+                    continue;
+                 end;
+                 ACBrPosPrinter1.Device.TimeOut := 3000;
                  aCBrPosPrinter1.Modelo := TACBrPosPrinterModelo(qrImpressoramodelo.asinteger);
                  ACBrPosPrinter1.Porta  :=qrImpressoraporta.asString;
                  ACBrPosPrinter1.LinhasEntreCupons := qrImpressoralinhaspular.asInteger;
@@ -234,11 +239,7 @@ begin
                   Memo.add('</pular_linhas>');
                   Memo.Add('</fn>');
                    Memo.Add('</corte_total>');
-                  // Memo.Add('</beep>');
-
-               // if qry.FieldByName('corta_papel').AsString='S' Then
-                 //  Memo.Add('</corte_parcial>');
-                ACBrPosPrinter1.Imprimir(memo.text);
+                    ACBrPosPrinter1.Imprimir(memo.text);
                 qrgrupos.next;
 
              end;

@@ -8,6 +8,7 @@ object frmEncerramento: TfrmEncerramento
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   OnClose = FormClose
+  OnShow = FormShow
   DesignerMasterStyle = 3
   object Rectangle1: TRectangle
     Align = Top
@@ -59,7 +60,7 @@ object frmEncerramento: TfrmEncerramento
     object Button2: TButton
       Align = Center
       StyledSettings = [Family, Size, Style]
-      Margins.Left = 50.000000000000000000
+      Margins.Left = 100.000000000000000000
       Size.Width = 97.000000000000000000
       Size.Height = 32.000000000000000000
       Size.PlatformDefault = False
@@ -74,13 +75,14 @@ object frmEncerramento: TfrmEncerramento
       Align = Right
       Images = dmLocal.ImageList1
       ImageIndex = 17
-      Margins.Right = 10.000000000000000000
-      Position.X = 302.000000000000000000
+      Margins.Right = 30.000000000000000000
+      Position.X = 282.000000000000000000
       Size.Width = 48.000000000000000000
       Size.Height = 48.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'cameratoolbutton'
       TextSettings.Trimming = None
+      OnClick = spImprimeClick
     end
   end
   object Layout1: TLayout
@@ -97,7 +99,7 @@ object frmEncerramento: TfrmEncerramento
       AllowSelection = False
       Align = Client
       Size.Width = 360.000000000000000000
-      Size.Height = 486.000000000000000000
+      Size.Height = 463.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
       ItemAppearance.ItemHeight = 30
@@ -136,6 +138,17 @@ object frmEncerramento: TfrmEncerramento
       Size.Height = 23.000000000000000000
       Size.PlatformDefault = False
       Text = 'Comanda                                             Total'
+      TabOrder = 2
+    end
+    object Label2: TLabel
+      Align = Bottom
+      Margins.Left = 20.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 486.000000000000000000
+      Size.Width = 340.000000000000000000
+      Size.Height = 23.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Total Geral'
       TabOrder = 1
     end
   end

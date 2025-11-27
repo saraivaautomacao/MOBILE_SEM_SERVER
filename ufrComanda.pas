@@ -220,7 +220,8 @@ begin
         pnInfoMesa.Visible:=false;
     end;
     frmDetalhe.lblConferencia.text:='Comanda '+formatFloat('00',Strtointdef(editNumMesa.text,00));
-     frmDetalhe.show;
+    frmDetalhe.nummesa:=formatFloat('00',Strtointdef(editNumMesa.text,00));
+    frmDetalhe.show;
 
 
  end;
@@ -412,7 +413,7 @@ procedure TfrmComanda.Image1Click(Sender: TObject);
 begin
 if not lstbxMesas.enabled then
    begin
-      ShowMessage('Verifique Conexões');
+     fancy.Show(TIconDialog.Warning, 'Aviso','Verifique Conexoes', 'OK');
        exit;
    end;
    lstbxmesas.Enabled:=false;
@@ -433,7 +434,15 @@ procedure TfrmComanda.imgStatusMesaClick(Sender: TObject);
 begin
    if not Assigned(frmEncerramento) then
       Application.createform(tfrmEncerramento,frmEncerramento);
-   dmLocal.qrEncerra.open;
+   dmLocal.qrVendas.open;
+  If   not  dmLocal.qrVendas.isempty Then
+  begin
+    fancy.Show(TIconDialog.Warning, 'Aviso','Vendas Pendentes', 'OK');
+    dmLocal.qrVendas.close;
+    exit;
+  end;
+  dmLocal.qrVendas.close;
+  dmLocal.qrEncerra.open;
   frmEncerramento.show;
 end;
 

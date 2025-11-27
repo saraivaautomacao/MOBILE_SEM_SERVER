@@ -124,6 +124,7 @@ object frmProdutos: TfrmProdutos
           Size.Width = 415.000000000000000000
           Size.Height = 598.000000000000000000
           Size.PlatformDefault = False
+          Visible = False
           object lstbxTabPrecos: TListBox
             Align = Top
             Locked = True
@@ -169,7 +170,7 @@ object frmProdutos: TfrmProdutos
                 Size.Width = 305.000000000000000000
                 Size.Height = 29.000000000000000000
                 Size.PlatformDefault = False
-                TabOrder = 38
+                TabOrder = 39
                 Text = 'rdbPreco1'
                 OnClick = rdbPreco1Click
               end
@@ -187,7 +188,7 @@ object frmProdutos: TfrmProdutos
                 Size.Width = 305.000000000000000000
                 Size.Height = 32.000000000000000000
                 Size.PlatformDefault = False
-                TabOrder = 38
+                TabOrder = 39
                 Text = 'RadioButton1'
                 OnClick = rdbPreco2Click
               end
@@ -205,7 +206,7 @@ object frmProdutos: TfrmProdutos
                 Size.Width = 305.000000000000000000
                 Size.Height = 32.000000000000000000
                 Size.PlatformDefault = False
-                TabOrder = 38
+                TabOrder = 39
                 Text = 'RadioButton1'
                 OnClick = rdbPreco3Click
               end
@@ -224,7 +225,7 @@ object frmProdutos: TfrmProdutos
                 Size.Width = 305.000000000000000000
                 Size.Height = 32.000000000000000000
                 Size.PlatformDefault = False
-                TabOrder = 38
+                TabOrder = 39
                 Text = 'RadioButton1'
                 OnClick = rdbPreco4Click
               end
@@ -239,7 +240,7 @@ object frmProdutos: TfrmProdutos
               object edtObservacao: TEdit
                 Touch.InteractiveGestures = [LongTap, DoubleTap]
                 Align = Bottom
-                TabOrder = 38
+                TabOrder = 39
                 Position.X = 10.000000000000000000
                 Position.Y = 3.000000000000000000
                 Margins.Left = 10.000000000000000000
@@ -261,7 +262,7 @@ object frmProdutos: TfrmProdutos
                 Size.Width = 89.000000000000000000
                 Size.Height = 31.000000000000000000
                 Size.PlatformDefault = False
-                TabOrder = 38
+                TabOrder = 39
                 Text = 'sabores'
                 TextSettings.Trimming = None
                 TintColor = claSteelblue
@@ -341,7 +342,7 @@ object frmProdutos: TfrmProdutos
               object edtPeso: TEdit
                 Touch.InteractiveGestures = [LongTap, DoubleTap]
                 Align = Bottom
-                TabOrder = 38
+                TabOrder = 39
                 KeyboardType = NumberPad
                 Position.X = 10.000000000000000000
                 Position.Y = 3.000000000000000000

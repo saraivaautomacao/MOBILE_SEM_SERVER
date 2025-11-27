@@ -592,7 +592,6 @@ object frmComanda: TfrmComanda
     Size.Height = 134.000000000000000000
     Size.PlatformDefault = False
     StyleLookup = 'calloutpanelstyle'
-    Visible = False
     TabOrder = 1
     object Label2: TLabel
       Align = Top
@@ -1329,7 +1328,6 @@ object frmComanda: TfrmComanda
     Size.Width = 265.000000000000000000
     Size.Height = 538.000000000000000000
     Size.PlatformDefault = False
-    Visible = False
     TabOrder = 4
     object rect_conf: TRectangle
       Align = Top

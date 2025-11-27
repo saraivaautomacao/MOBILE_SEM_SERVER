@@ -54,17 +54,18 @@ object frmDetalhe: TfrmDetalhe
       Align = Right
       Images = dmLocal.ImageList1
       ImageIndex = 17
-      Margins.Right = 10.000000000000000000
-      Position.X = 355.000000000000000000
+      Margins.Right = 20.000000000000000000
+      Position.X = 345.000000000000000000
       Size.Width = 48.000000000000000000
       Size.Height = 48.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'cameratoolbutton'
       TextSettings.Trimming = None
+      OnClick = spImprimeClick
     end
     object SpeedButton1: TSpeedButton
       Align = Center
-      Margins.Left = 50.000000000000000000
+      Margins.Left = 70.000000000000000000
       Size.Width = 137.000000000000000000
       Size.Height = 48.000000000000000000
       Size.PlatformDefault = False
@@ -119,7 +120,7 @@ object frmDetalhe: TfrmDetalhe
         AppearanceClassName = 'TTextObjectAppearance'
         Appearance.Font.Size = 10.000000000000000000
         Appearance.TextAlign = Trailing
-        Appearance.Width = 97.000000000000000000
+        Appearance.Width = 89.000000000000000000
         Appearance.Height = 22.000000000000000000
         Appearance.PlaceOffset.X = 261.000000000000000000
         Appearance.PlaceOffset.Y = 32.000000000000000000

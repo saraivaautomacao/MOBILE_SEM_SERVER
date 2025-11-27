@@ -25,9 +25,12 @@ type
     spImprime: TSpeedButton;
     LinkFillControlToField1: TLinkFillControlToField;
     Label1: TLabel;
+    Label2: TLabel;
     procedure btnVoltarClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Button2Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure spImprimeClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -41,7 +44,7 @@ implementation
 
 {$R *.fmx}
 
-uses udmLocal, ufrComanda;
+uses udmLocal, ufrComanda,acbrposprinter;
 
 procedure TfrmEncerramento.btnVoltarClick(Sender: TObject);
 begin
@@ -51,7 +54,8 @@ end;
 
 procedure TfrmEncerramento.Button2Click(Sender: TObject);
 begin
-     dmLocal.conLocal.ExecSQL('delete from vendas');
+
+     dmLocal.conLocal.ExecSQL('delete from vendas_resumo');
      frmcomanda.lstbxMesas.Clear;
      frmcomanda.carregamesas;
      close;
@@ -63,6 +67,75 @@ begin
     frmEncerramento := nil;
     frmEncerramento.disposeof;
     dmlocal.qrEncerra.close;
+end;
+
+procedure TfrmEncerramento.FormShow(Sender: TObject);
+begin
+  with dmlocal do
+  begin
+      var soma:currency:=0;
+      qrEncerra.first;
+      while not qrencerra.eof do
+      begin
+         soma:=soma+qrEncerratotal.ascurrency;
+         qrencerra.next;
+      end;
+      label2.text:='Total Geral:'+floattostrf(soma,ffcurrency,12,2);
+  end;
+end;
+
+procedure TfrmEncerramento.spImprimeClick(Sender: TObject);
+begin
+ with dmlocal do
+   begin
+       qrImpressora.open;
+       qrCabecalho.open;
+       //impressao parcial existe
+       if qrImpressora.locate('local','PARCIAL') then
+       Begin
+         var   Memo:TStringList:=TStringList.Create;
+         try
+            aCBrPosPrinter1.Modelo := TACBrPosPrinterModelo(qrImpressoramodelo.asinteger);
+            ACBrPosPrinter1.Porta  :=qrImpressoraporta.asString;
+             ACBrPosPrinter1.LinhasEntreCupons := qrImpressoralinhaspular.asInteger;
+             ACBrPosPrinter1.ControlePorta :=true;// qrImpressoracontroleporta.asBoolean;
+             ACBrPosPrinter1.CortaPapel := qrImpressoracortarpapel.asBoolean;
+             memo.clear;
+             Memo.Add('</zera>');
+             Memo.Add('<e>');
+             Memo.Add(qrCabecalhocabecalho1.asstring);
+             Memo.Add(qrCabecalhocabecalho2.asstring);
+             Memo.Add('</fn>');
+             Memo.add('</linha_simples>');
+             Memo.add('***************FECHAMENTO*************');
+             Memo.add('</linha_simples>');
+
+             memo.Add('Atendente: '+Atendente);
+             Memo.add('Data/hora: '+DateToStr(now));
+             memo.Add('</linha_simples>');
+              memo.Add('      Comanda             Total ') ;
+             memo.Add('</linha_simples>');
+             Var Soma:Currency:=0;
+             qrencerra.first;
+             while not qrencerra.eof do
+             begin
+                memo.Add('        '+qrEncerralkmesa.asString +'              '+floattostrf(qrencerratotal.ascurrency,ffcurrency,12,2));
+                qrencerra.Next;
+             end;
+             memo.Add('</linha_simples>');
+             Memo.Add('<e>'+label2.text+'</e>');
+             Memo.add('</lf>');
+             Memo.add('</pular_linhas>');
+             Memo.Add('</fn>');
+             Memo.Add('</corte_total>');
+             ACBrPosPrinter1.Imprimir(memo.text);
+         finally
+             memo.DisposeOf;
+         end;
+       End;
+      qrCabecalho.close;
+      qrImpressora.close;
+   end;
 end;
 
 end.
