@@ -17,7 +17,8 @@ uses
   ufrdestinoimp in 'ufrdestinoimp.pas' {frmDestinoImp},
   ufrConfiguracao in 'ufrConfiguracao.pas' {frmConfiguracao},
   ufrEncerramento in 'ufrEncerramento.pas' {frmEncerramento},
-  ufrcabecalho in 'ufrcabecalho.pas' {frmCabecalho};
+  ufrcabecalho in 'ufrcabecalho.pas' {frmCabecalho},
+  uLoading in 'uLoading.pas';
 
 {$R *.res}
 

@@ -280,7 +280,7 @@ object frmConfiguracao: TfrmConfiguracao
         Align = Center
         Margins.Bottom = 100.000000000000000000
         Size.Width = 271.000000000000000000
-        Size.Height = 295.000000000000000000
+        Size.Height = 345.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
         object Label4: TLabel
@@ -326,10 +326,10 @@ object frmConfiguracao: TfrmConfiguracao
           end
         end
         object rect_save_config: TRectangle
-          Align = Top
+          Align = Bottom
           Fill.Color = xFF4A70F7
-          Margins.Top = 60.000000000000000000
-          Position.Y = 212.000000000000000000
+          Margins.Bottom = 30.000000000000000000
+          Position.Y = 265.000000000000000000
           Size.Width = 271.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
@@ -385,6 +385,34 @@ object frmConfiguracao: TfrmConfiguracao
             Size.Width = 266.000000000000000000
             Size.Height = 32.000000000000000000
             Size.PlatformDefault = False
+          end
+        end
+        object rect_carga: TRectangle
+          Align = Bottom
+          Fill.Color = xFF4A70F7
+          Margins.Top = 12.000000000000000000
+          Margins.Bottom = 10.000000000000000000
+          Position.Y = 205.000000000000000000
+          Size.Width = 271.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Kind = None
+          XRadius = 4.000000000000000000
+          YRadius = 4.000000000000000000
+          OnClick = rect_cargaClick
+          object Label7: TLabel
+            Align = Center
+            StyledSettings = [Family]
+            Locked = True
+            Size.Width = 271.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 16.000000000000000000
+            TextSettings.FontColor = claWhite
+            TextSettings.HorzAlign = Center
+            TextSettings.Trimming = None
+            Text = 'Carga Produtos'
+            TabOrder = 0
           end
         end
       end

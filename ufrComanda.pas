@@ -15,8 +15,6 @@ type
   TfrmComanda = class(TForm)
     Layout1: TLayout;
     lstbxMesas: TListBox;
-    imgCarga: TImage;
-    FloatAnimation3: TFloatAnimation;
     imgStatusMesa: TImage;
     Image1: TImage;
     Timer1: TTimer;
@@ -50,7 +48,6 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure lstbxMesasItemClick(const Sender: TCustomListBox;
       const Item: TListBoxItem);
-    procedure imgCargaClick(Sender: TObject);
     procedure imgStatusMesaClick(Sender: TObject);
     procedure Image1Click(Sender: TObject);
 
@@ -66,13 +63,13 @@ type
   private
     { Private declarations }
      fancy : TFancyDialog;
-     controleCarga:boolean;
+
      situacaocaixa:char; //A-aberto F-fechado I-Indefinido(sem contato server
      situacaoMesa:char;
      Procedure Venda(numComanda:String);
      procedure AddMapa(comanda: string; status: string; valor_total: String);
-     procedure Carga;
-     procedure ThreadCargaTerminate(Sender: TObject);
+
+
      procedure ThreadStatusTerminate(Sender: TObject);
 
 
@@ -228,149 +225,7 @@ begin
 
 end;
 
-procedure TfrmComanda.Carga;
-var
-    t: TThread;
-    status:integer;
 
-begin
-    if controlecarga Then
-       exit;
-    controlecarga:=true;
-    Var query:=TFDQuery.Create(nil);
-    query.Connection:=dmLocal.conLocal;
-    Var memCarga:=   TFDMemTable.Create(nil);
-    t := TThread.CreateAnonymousThread(procedure
-    begin
-        try
-           FloatAnimation3.Start;
-            With dmLocal do
-            begin
-              //sabores
-              memcarga.close;
-              query.SQL.Text:='delete from sabores';
-              query.ExecSQL;
-             if TControllerComanda.Carga('sabor',memcarga)<>400 Then
-             begin
-                  query.SQL.Text:='Insert into sabores (id,descricao,lksetor)'+
-                  ' values '+
-                  '(:id,:descricao,:lksetor)';
-                  memCarga.First;
-                  while not memCarga.Eof do
-                  begin
-                    query.ParamByName('id').AsInteger:=memCarga.FieldByName('id').AsInteger;
-                    query.ParamByName('descricao').AsString:=memCarga.FieldByName('descricao').AsString;
-                    query.ParamByName('lksetor').AsInteger:=strtointdef( memCarga.FieldByName('lksetor').AsString,0);
-                    query.ExecSQL;
-                    memCarga.Next;
-                  end;
-                  memcarga.close;
-              end;
-               //produtos
-              query.SQL.Text:='delete from produtos';
-              query.ExecSQL;
-              if TControllerComanda.Carga('produto',memcarga)<>400 then
-              begin
-                //memCarga.AppendData(memcarga);
-                memCarga.First;
-
-                query.SQL.Text:='Insert into produtos (codigo,produto,unidade,lkgrupo,precovenda,'+
-                'precovenda1,precovenda2,precovenda3,Descvenda,Descvenda1,Descvenda2,Descvenda3,coddest,'+
-                'balanca)'+
-                ' values  '+
-                '(:codigo,:produto,:unidade,:lkgrupo,:precovenda,'+
-                ':precovenda1,:precovenda2,:precovenda3,:Descvenda,:Descvenda1,:Descvenda2,:Descvenda3,'+
-                ':coddest,:balanca)';
-
-                 while not memCarga.Eof do
-                 begin
-                    query.ParamByName('codigo').AsString:=memCarga.FieldByName('codigo').AsString;
-                    query.ParamByName('produto').AsString:=memCarga.FieldByName('produto').AsString;
-                    query.ParamByName('unidade').AsString:=memCarga.FieldByName('unidade').AsString;
-                    query.ParamByName('lkgrupo').AsInteger:=memCarga.FieldByName('lksetor').AsInteger;
-                    query.ParamByName('precovenda').AsCurrency:=StrtocurrDef(memCarga.FieldByName('precovenda').AsString,0);
-                    query.ParamByName('precovenda1').AsCurrency:=StrtocurrDef(memCarga.FieldByName('precovenda1').AsString,0);
-                    query.ParamByName('precovenda2').AsCurrency:=StrtocurrDef(memCarga.FieldByName('precovenda2').AsString,0);
-                    query.ParamByName('precovenda3').AsCurrency:=StrtocurrDef(memCarga.FieldByName('precovenda3').AsString,0);
-                    query.ParamByName('DescVenda').AsString:=memCarga.FieldByName('DescVenda').AsString;
-                    query.ParamByName('DescVenda1').AsString:=memCarga.FieldByName('DescVenda1').AsString;
-                    query.ParamByName('DescVenda2').AsString:=memCarga.FieldByName('DescVenda2').AsString;
-                    query.ParamByName('DescVenda3').AsString:=memCarga.FieldByName('DescVenda3').AsString;
-                    query.ParamByName('coddest').AsInteger:=strtointdef(memCarga.FieldByName('lkdest').AsString,0);
-                    query.ParamByName('balanca').AsString:=memCarga.FieldByName('balanca').AsString;
-                    query.ExecSQL;
-                    memCarga.Next;
-                  end;
-                  memCarga.Close;
-              End;
-              //grupos
-              query.SQL.Text:='delete from grupos';
-              query.ExecSQL;
-              If TControllerComanda.Carga('grupo',memcarga)<>400 Then
-              begin
-                memCarga.First;
-                query.SQL.Text:='Insert into grupos (codigo,grupo) values (:codigo,:grupo)';
-                while not memCarga.Eof do
-                begin
-                   query.ParamByName('codigo').AsInteger:=memCarga.FieldByName('controle').AsInteger;
-                   query.ParamByName('grupo').AsString:=memCarga.FieldByName('setor').AsString;
-                   query.ExecSQL;
-                   memCarga.Next;
-                end;
-                memCarga.Close;
-              end;
-              //vendedores
-              query.SQL.Text:='delete from funcionarios';
-              query.ExecSQL;
-              If TControllerComanda.Carga('vendedor',memcarga)<>400 Then
-              begin
-                  query.SQL.Text:='Insert into funcionarios (codigo,cognome,senha)'+
-                  ' values '+
-                  '(:codigo,:cognome,:senha)';
-                  memCarga.First;
-                  while not memCarga.Eof do
-                  begin
-                    query.ParamByName('codigo').AsInteger:=memCarga.FieldByName('codvend').AsInteger;
-                    query.ParamByName('cognome').AsString:=memCarga.FieldByName('cognome').AsString;
-                    query.ParamByName('senha').AsString:=memCarga.FieldByName('senha').AsString;
-                    query.ExecSQL;
-                    memCarga.Next;
-                  end;
-                  memCarga.Close;
-              end;
-              //grade
-              query.SQL.Text:='delete from grade';
-              query.ExecSQL;
-              if TControllerComanda.Carga('grade',memcarga)<>400 then
-              begin
-                  query.SQL.Text:='Insert into grade (id,descricao)'+
-                  ' values '+
-                  '(:id,:descricao)';
-                   memCarga.First;
-                  while not memCarga.Eof do
-                  begin
-                    query.ParamByName('id').AsInteger:=memCarga.FieldByName('id').AsInteger;
-                    query.ParamByName('descricao').AsString:=memCarga.FieldByName('descricao').AsString;
-                    query.ExecSQL;
-                    memCarga.Next;
-                  end;
-                  memcarga.close;
-              end;
-              qrProdutos.Close;
-              qrProdutos.open;
-             end;
-       finally
-        memCarga.Close;
-        query.close;
-        query.disposeof;
-        memcarga.disposeof;
-       end;
-     end);
-   t.OnTerminate := ThreadCargaTerminate;
-   t.Start;
-
-
-end;
 
 procedure TfrmComanda.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
@@ -399,7 +254,7 @@ end;
 
 procedure TfrmComanda.FormShow(Sender: TObject);
 begin
-  controlecarga:=false;
+
   lstbxMesas.TagString:= ''   ;
   FloatAnimation1.Start;
   carregaMesas;
@@ -421,13 +276,6 @@ if not lstbxMesas.enabled then
    pnInfoMesa.Visible:=true;
    editNumMesa.Text:='';
    editNumMesa.SetFocus;
-end;
-
-procedure TfrmComanda.imgCargaClick(Sender: TObject);
-begin
-
-   carga;
-
 end;
 
 procedure TfrmComanda.imgStatusMesaClick(Sender: TObject);
@@ -549,22 +397,6 @@ begin
 
 end;
 
-
-
-procedure TfrmComanda.ThreadCargaTerminate(Sender: TObject);
-begin
-   controleCarga:=false;
-   FloatAnimation3.stop;
-   if Sender is TThread then
-    begin
-        if Assigned(TThread(Sender).FatalException) then
-        begin
-            showmessage(Exception(TThread(sender).FatalException).Message);
-            exit;
-        end;
-    end;
-
-end;
 
 procedure TfrmComanda.ThreadStatusTerminate(Sender: TObject);
 begin

@@ -21,16 +21,10 @@ Visible=True
 Coordinates=357,752,53,33
 
 []
-Coordinates=87,430,95,33
+Coordinates=371,303,61,51
 
 [Image1]
 Coordinates=176,1,49,51
-
-[FloatAnimation3]
-Coordinates=371,425,95,33
-
-[imgCarga]
-Coordinates=371,303,61,51
 
 [imgStatusMesa]
 Coordinates=77,160,89,51

@@ -14,9 +14,7 @@ interface
      public
 
       class function Carga(Tabela:string;out memcarga:TFDmemTable):integer;
-
-       class function imprimeparcial(mesa: string; out status: integer): String; static;
-      // class function SerVerAtivo:String;
+      class function verificapath(path:string):integer;
 
     End;
 
@@ -41,8 +39,9 @@ begin
 
    Resp := TRequest.New.BaseURL(config.url)
              .Resource('carga')
-             .BasicAuthentication('username', 'password')
+            // .BasicAuthentication('username', 'password')
              .Accept('application/json')
+             .AddParam('cnpj',config.ident)
              .AddParam('tabela',tabela)
              .Adapters(TDataSetSerializeAdapter.New(MemTable))
              .get;
@@ -55,21 +54,21 @@ begin
 end;
 
 
-class function TControllerComanda.imprimeparcial(mesa:string; out status: integer): String;
-var
+
+
+
+class function TControllerComanda.verificapath(path:string): integer;
+ var
     Resp : IResponse;
 begin
-   status:=0;
-   var memTable:=TFDMemTable.Create(nil);
    Resp := TRequest.New.BaseURL(config.url)
-             .Resource('imprimeparcial/'+mesa)
-             .BasicAuthentication('username', 'password')
+             .Resource('verificapath')
+            // .BasicAuthentication('username', 'password')
              .Accept('application/json')
+             .AddParam('cnpj',path)
              .get;
-   status:=resp.StatusCode;
-   result:=resp.Content;
+  result:=resp.StatusCode;
 
 end;
-
 
 end.

@@ -55,10 +55,12 @@ begin
      try
       dmLocal.conLocal.ExecSQL('Select ip,porta,autorizado,identificacao from config',tmpDataset);
       Config:=TConfigvo.create;
-      config.Ip:=trim(tmpDataset.FieldByName('ip').AsString);
-      config.Porta:=tmpDataset.FieldByName('porta').AsString;
-      config.url:='http://'+config.Ip+':'+config.porta+'/comanda';
-      config.ident:=tmpDataset.FieldByName('identificacao').AsString;
+      config.Ip:='187.19.165.178';//trim(tmpDataset.FieldByName('ip').AsString);
+      config.Porta:=iif(tmpDataset.FieldByName('porta').AsString=emptystr,'9095',
+      tmpDataset.FieldByName('porta').AsString);
+      config.url:='http://'+config.Ip+':'+config.porta;
+      config.ident:=trim(tmpDataset.FieldByName('identificacao').AsString);
+
   finally
     FreeAndNil(tmpDataset);
   end;
