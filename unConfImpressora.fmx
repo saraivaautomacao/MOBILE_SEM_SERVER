@@ -3,7 +3,7 @@ object frmConfImpressora: TfrmConfImpressora
   Top = 240
   Caption = 'ACBrPosPrinter - Teste'
   ClientHeight = 598
-  ClientWidth = 405
+  ClientWidth = 376
   Position = ScreenCenter
   StyleBook = StyleBook1
   FormFactor.Width = 320
@@ -17,13 +17,13 @@ object frmConfImpressora: TfrmConfImpressora
   DesignerMasterStyle = 0
   object Panel2: TPanel
     Align = Client
-    Size.Width = 405.000000000000000000
+    Size.Width = 376.000000000000000000
     Size.Height = 549.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     object gbConfiguracao: TGroupBox
       Align = Top
-      Size.Width = 405.000000000000000000
+      Size.Width = 376.000000000000000000
       Size.Height = 353.000000000000000000
       Size.PlatformDefault = False
       Text = 'Configura'#231#227'o'
@@ -66,8 +66,9 @@ object frmConfImpressora: TfrmConfImpressora
           Items.Strings = (
             #39'TCP:192.168.0.31:9100')
           ItemIndex = -1
-          Position.Y = 18.000000000000000000
-          Size.Width = 269.000000000000000000
+          Position.X = 1.000000000000000000
+          Position.Y = 15.000000000000000000
+          Size.Width = 289.000000000000000000
           Size.Height = 28.000000000000000000
           Size.PlatformDefault = False
           OnChange = cbxPortaChange
@@ -98,10 +99,10 @@ object frmConfImpressora: TfrmConfImpressora
         Text = 'Espa'#231'os'
       end
       object btSerial: TSpeedButton
-        Position.X = 264.000000000000000000
-        Position.Y = 72.000000000000000000
+        Position.X = 335.000000000000000000
+        Position.Y = 85.000000000000000000
         Size.Width = 25.000000000000000000
-        Size.Height = 48.000000000000000000
+        Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Trimming = None
       end
@@ -206,7 +207,7 @@ object frmConfImpressora: TfrmConfImpressora
         Position.X = 273.000000000000000000
         Position.Y = 193.000000000000000000
         TextSettings.Font.Size = 10.000000000000000000
-        Size.Width = 93.000000000000000000
+        Size.Width = 72.000000000000000000
         Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
         StyledSettings = [Family, Style, FontColor]
@@ -226,8 +227,8 @@ object frmConfImpressora: TfrmConfImpressora
         Text = 'Cortar Papel'
       end
       object btSearchPorts: TButton
-        Position.X = 289.000000000000000000
-        Position.Y = 73.000000000000000000
+        Position.X = 297.000000000000000000
+        Position.Y = 78.000000000000000000
         Size.Width = 48.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
@@ -235,6 +236,7 @@ object frmConfImpressora: TfrmConfImpressora
         TabOrder = 9
         Text = 'btSearchPorts'
         TextSettings.Trimming = None
+        Visible = False
         OnClick = btSearchPortsClick
       end
       object Button1: TButton
@@ -245,7 +247,7 @@ object frmConfImpressora: TfrmConfImpressora
         Margins.Bottom = 10.000000000000000000
         Position.X = 120.000000000000000000
         Position.Y = 304.000000000000000000
-        Size.Width = 165.000000000000000000
+        Size.Width = 136.000000000000000000
         Size.Height = 39.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
@@ -262,7 +264,7 @@ object frmConfImpressora: TfrmConfImpressora
         Margins.Bottom = 10.000000000000000000
         Position.X = 120.000000000000000000
         Position.Y = 256.000000000000000000
-        Size.Width = 165.000000000000000000
+        Size.Width = 136.000000000000000000
         Size.Height = 38.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
@@ -300,7 +302,7 @@ object frmConfImpressora: TfrmConfImpressora
       HeaderAppearanceClassName = 'TListHeaderObjects'
       FooterAppearanceClassName = 'TListHeaderObjects'
       Align = Client
-      Size.Width = 405.000000000000000000
+      Size.Width = 376.000000000000000000
       Size.Height = 196.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
@@ -420,7 +422,7 @@ object frmConfImpressora: TfrmConfImpressora
     Align = Top
     Fill.Color = claWhite
     Sides = []
-    Size.Width = 405.000000000000000000
+    Size.Width = 376.000000000000000000
     Size.Height = 49.000000000000000000
     Size.PlatformDefault = False
     Stroke.Color = xFFE2E2E2
@@ -428,7 +430,7 @@ object frmConfImpressora: TfrmConfImpressora
       Align = Contents
       StyledSettings = [Family]
       Locked = True
-      Size.Width = 405.000000000000000000
+      Size.Width = 376.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.Size = 24.000000000000000000

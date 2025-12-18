@@ -757,7 +757,6 @@ object frmComanda: TfrmComanda
           FileName = 'C:\Users\aspire\Desktop\google-docs.png'
         end>
       Align = Center
-      Margins.Left = 70.000000000000000000
       Margins.Top = 5.000000000000000000
       Margins.Bottom = 2.000000000000000000
       Size.Width = 65.000000000000000000
@@ -1114,8 +1113,9 @@ object frmComanda: TfrmComanda
             43860C1932E405E37F02878FB2EBE0CF77A40000000049454E44AE426082}
           FileName = 'C:\Users\ORACLEVM\Desktop\iamages\money.png'
         end>
-      Align = Right
+      Anchors = [akRight, akBottom]
       Position.X = 338.000000000000000000
+      Position.Y = 4.000000000000000000
       Size.Width = 65.000000000000000000
       Size.Height = 54.000000000000000000
       Size.PlatformDefault = False
