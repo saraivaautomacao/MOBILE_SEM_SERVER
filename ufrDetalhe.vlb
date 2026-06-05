@@ -54,12 +54,12 @@ Coordinates=0,0,91,36
 [lblConferencia]
 Coordinates=0,0,97,58
 
-[SpeedButton1]
-Coordinates=18,77,96,58
-
 [dmLocal.qrEncerra]
 Coordinates=533,529,123,102
 
 [dmLocal.qrCabecalho]
 Coordinates=533,408,140,102
+
+[edt_Cancela_comanda]
+Coordinates=18,77,96,58
 

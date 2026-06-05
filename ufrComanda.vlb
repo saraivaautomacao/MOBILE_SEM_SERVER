@@ -146,6 +146,7 @@ Coordinates=535,365,181,105
 
 [dmLocal.qrCabecalho]
 Coordinates=253,161,121,87
+Visible=False
 
 [Image5]
 Coordinates=429,1,49,51
@@ -155,4 +156,7 @@ Coordinates=436,71,79,33
 
 [frmConfImpressora.BindSourceDB1]
 Coordinates=193,373,191,231
+
+[dmLocal.qrForma_pgto]
+Visible=False
 

@@ -2,8 +2,8 @@ object frmCabecalho: TfrmCabecalho
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 635
-  ClientWidth = 328
+  ClientHeight = 558
+  ClientWidth = 332
   Fill.Kind = Solid
   FormFactor.Width = 320
   FormFactor.Height = 480
@@ -15,7 +15,7 @@ object frmCabecalho: TfrmCabecalho
     Align = Top
     Fill.Color = claWhite
     Sides = []
-    Size.Width = 328.000000000000000000
+    Size.Width = 332.000000000000000000
     Size.Height = 49.000000000000000000
     Size.PlatformDefault = False
     Stroke.Color = xFFE2E2E2
@@ -23,7 +23,7 @@ object frmCabecalho: TfrmCabecalho
       Align = Contents
       StyledSettings = [Family]
       Locked = True
-      Size.Width = 328.000000000000000000
+      Size.Width = 332.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.Size = 24.000000000000000000

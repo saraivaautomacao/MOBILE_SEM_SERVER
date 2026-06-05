@@ -1,4 +1,4 @@
-﻿unit ufrEncerramento;
+unit ufrEncerramento;
 
 interface
 
@@ -76,33 +76,22 @@ end;
 
 procedure TfrmEncerramento.Button2Click(Sender: TObject);
 begin
-  MessageDlg(
-    'Esta ação irá zerar todas as vendas do dia.' + sLineBreak + 'Deseja continuar?',
-    TMsgDlgType.mtWarning,
-    [TMsgDlgBtn.mbYes, TMsgDlgBtn.mbNo],
-    0,
-    procedure(const AResult: TModalResult)
-    begin
-      if AResult = mrYes then
-      begin
-        dmLocal.conLocal.ExecSQL('delete from vendas_resumo');
-        with dmlocal do
-        begin
-          qrForma_pgto.first;
-          while not qrForma_pgto.eof do
-          begin
-            qrForma_pgto.edit;
-            qrForma_pgtoVALOR.asCurrency := 0;
-            qrForma_pgto.post;
-            qrForma_pgto.next;
-          end;
-        end;
-        frmcomanda.lstbxMesas.Clear;
-        frmcomanda.carregamesas;
-        close;
-      end;
-    end
-  );
+
+     dmLocal.conLocal.ExecSQL('delete from vendas_resumo');
+     with dmlocal do
+     begin
+       qrForma_pgto.first;
+       while not qrForma_pgto.eof do
+       begin
+          qrForma_pgto.edit;
+         qrForma_pgtoVALOR.asCurrency:=0;
+         qrForma_pgto.post;
+         qrForma_pgto.next;
+       end;
+     end;
+     frmcomanda.lstbxMesas.Clear;
+     frmcomanda.carregamesas;
+     close;
 end;
 
 procedure TfrmEncerramento.FormClose(Sender: TObject; var Action: TCloseAction);

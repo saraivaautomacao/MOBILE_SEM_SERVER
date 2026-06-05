@@ -2595,8 +2595,8 @@ object dmLocal: TdmLocal
     Connection = conLocal
     SQL.Strings = (
       'select * from cabecalho')
-    Left = 48
-    Top = 216
+    Left = 24
+    Top = 232
     object qrCabecalhocabecalho1: TStringField
       FieldName = 'cabecalho1'
       Origin = 'cabecalho1'
@@ -2613,7 +2613,7 @@ object dmLocal: TdmLocal
     SQL.Strings = (
       'select lkmesa,total from vendas_resumo'
       'where lkmesa=:lkmesa')
-    Left = 152
+    Left = 344
     Top = 216
     ParamData = <
       item
@@ -2635,6 +2635,29 @@ object dmLocal: TdmLocal
       currency = True
       Precision = 14
       Size = 2
+    end
+  end
+  object qrForma_pgto: TFDQuery
+    Connection = conLocal
+    SQL.Strings = (
+      'select id,descricao,valor from forma_pgto')
+    Left = 112
+    Top = 240
+    object qrForma_pgtoID: TFDAutoIncField
+      FieldName = 'ID'
+      Origin = 'ID'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = False
+    end
+    object qrForma_pgtoDESCRICAO: TStringField
+      FieldName = 'DESCRICAO'
+      Origin = 'DESCRICAO'
+      Required = True
+    end
+    object qrForma_pgtoVALOR: TCurrencyField
+      FieldName = 'VALOR'
+      Origin = 'VALOR'
+      Required = True
     end
   end
 end

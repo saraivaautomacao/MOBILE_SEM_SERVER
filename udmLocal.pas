@@ -92,6 +92,10 @@ type
     qrResumo_vendaslkmesa: TStringField;
     qrResumo_vendastotal: TBCDField;
     qrEncerratotal: TBCDField;
+    qrForma_pgto: TFDQuery;
+    qrForma_pgtoID: TFDAutoIncField;
+    qrForma_pgtoDESCRICAO: TStringField;
+    qrForma_pgtoVALOR: TCurrencyField;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

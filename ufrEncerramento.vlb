@@ -1,65 +1,82 @@
 ﻿[lsvResumo]
-Coordinates=620,30,89,177
+Coordinates=620,30,107,212
 Visible=True
 
 [Layout1]
-Coordinates=177,232,53,33
+Coordinates=177,232,60,36
 
 [Button2]
-Coordinates=127,10,53,51
+Coordinates=127,10,59,58
 
 [Rectangle1]
-Coordinates=87,232,69,33
+Coordinates=87,232,80,36
 
 [btnVoltar]
-Coordinates=269,10,59,51
+Coordinates=269,10,66,58
 
 [lbl_titulo]
-Coordinates=196,10,57,51
+Coordinates=196,10,63,58
 
 [ToolBar1]
-Coordinates=10,232,58,33
+Coordinates=10,232,67,36
 
 []
 Coordinates=118,80,82,33
 
 [dmLocal.memSAbor]
-Coordinates=454,1,114,123
+Coordinates=454,1,130,146
 
 [dmLocal.memPedido]
-Coordinates=108,284,117,285
+Coordinates=108,284,135,344
 
 [dmLocal.qrImpressora]
-Coordinates=291,312,125,213
+Coordinates=291,312,142,256
 
 [dmLocal.qrVendas]
-Coordinates=291,80,106,213
+Coordinates=291,80,122,256
 
 [dmLocal.qrEncerra]
-Coordinates=740,40,108,33
+Coordinates=740,40,123,36
 Visible=False
 
 [dmLocal.qrGrupos]
-Coordinates=118,80,106,123
+Coordinates=118,80,120,146
 
 [dmLocal.dtsLinkPedido]
-Coordinates=105,588,130,33
+Coordinates=105,588,148,36
 
 [dmLocal.qrProdutos]
-Coordinates=244,544,115,321
+Coordinates=244,544,130,388
 
 [BindSourceDB1]
-Coordinates=740,40,93,105
+Coordinates=740,40,111,124
 
 [BindingsList1]
-Coordinates=0,0,82,33
+Coordinates=0,0,91,36
 
 [spImprime]
-Coordinates=51,52,66,51
+Coordinates=51,52,74,58
 
 [dmLocal.qrCabecalho]
-Coordinates=163,222,121,87
+Coordinates=163,222,140,102
 
 [Label1]
-Coordinates=0,0,46,51
+Coordinates=0,0,53,58
+
+[dmLocal.qrForma_pgto]
+Coordinates=720,310,147,36
+Visible=False
+
+[dmLocal.qrResumo_vendas]
+Coordinates=114,129,174,102
+
+[Label2]
+Coordinates=55,129,53,58
+
+[lsvPagamentos]
+Coordinates=530,330,107,212
+Visible=True
+
+[BindSourceDB2]
+Coordinates=720,310,134,146
 

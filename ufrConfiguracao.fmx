@@ -2,7 +2,7 @@ object frmConfiguracao: TfrmConfiguracao
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 607
+  ClientHeight = 553
   ClientWidth = 381
   Fill.Kind = Solid
   FormFactor.Width = 320
@@ -15,7 +15,7 @@ object frmConfiguracao: TfrmConfiguracao
   object TabControl: TTabControl
     Align = Client
     Size.Width = 381.000000000000000000
-    Size.Height = 607.000000000000000000
+    Size.Height = 553.000000000000000000
     Size.PlatformDefault = False
     StyleLookup = 'TabControlStyle1'
     TabHeight = 49.000000000000000000
@@ -24,9 +24,9 @@ object frmConfiguracao: TfrmConfiguracao
     TabPosition = None
     Sizes = (
       381s
-      607s
+      553s
       381s
-      607s)
+      553s)
     object TabLogin: TTabItem
       CustomIcon = <
         item
@@ -280,7 +280,7 @@ object frmConfiguracao: TfrmConfiguracao
         Align = Center
         Margins.Bottom = 100.000000000000000000
         Size.Width = 271.000000000000000000
-        Size.Height = 345.000000000000000000
+        Size.Height = 354.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
         object Label4: TLabel
@@ -329,7 +329,7 @@ object frmConfiguracao: TfrmConfiguracao
           Align = Bottom
           Fill.Color = xFF4A70F7
           Margins.Bottom = 30.000000000000000000
-          Position.Y = 265.000000000000000000
+          Position.Y = 274.000000000000000000
           Size.Width = 271.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
@@ -392,7 +392,7 @@ object frmConfiguracao: TfrmConfiguracao
           Fill.Color = xFF4A70F7
           Margins.Top = 12.000000000000000000
           Margins.Bottom = 10.000000000000000000
-          Position.Y = 205.000000000000000000
+          Position.Y = 214.000000000000000000
           Size.Width = 271.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False

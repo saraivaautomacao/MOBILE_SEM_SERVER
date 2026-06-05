@@ -99,7 +99,7 @@ object frmEncerramento: TfrmEncerramento
       AllowSelection = False
       Align = Client
       Size.Width = 360.000000000000000000
-      Size.Height = 463.000000000000000000
+      Size.Height = 321.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
       ItemAppearance.ItemHeight = 30
@@ -151,18 +151,52 @@ object frmEncerramento: TfrmEncerramento
       Text = 'Total Geral'
       TabOrder = 1
     end
+    object lsvPagamentos: TListView
+      ItemAppearanceClassName = 'TDynamicAppearance'
+      ItemEditAppearanceClassName = 'TDynamicAppearance'
+      HeaderAppearanceClassName = 'TListHeaderObjects'
+      FooterAppearanceClassName = 'TListHeaderObjects'
+      Align = Bottom
+      Position.Y = 344.000000000000000000
+      Size.Width = 360.000000000000000000
+      Size.Height = 142.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      ItemAppearance.ItemHeight = 35
+      ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+        item
+          AppearanceObjectName = 'Text1'
+          AppearanceClassName = 'TTextObjectAppearance'
+          Appearance.Width = 215.000000000000000000
+          Appearance.Height = 29.000000000000000000
+          Appearance.PlaceOffset.Y = 7.000000000000000000
+        end
+        item
+          AppearanceObjectName = 'Text2'
+          AppearanceClassName = 'TTextObjectAppearance'
+          Appearance.Width = 97.000000000000000000
+          Appearance.Height = 28.000000000000000000
+          Appearance.PlaceOffset.X = 222.000000000000000000
+          Appearance.PlaceOffset.Y = 6.000000000000000000
+        end>
+      ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
+        item
+          AppearanceObjectName = 'Text1'
+          AppearanceClassName = 'TTextObjectAppearance'
+        end>
+    end
   end
   object BindSourceDB1: TBindSourceDB
     DataSet = dmLocal.qrEncerra
     ScopeMappings = <>
-    Left = 176
-    Top = 264
+    Left = 224
+    Top = 208
   end
   object BindingsList1: TBindingsList
     Methods = <>
     OutputConverters = <>
-    Left = 68
-    Top = 245
+    Left = 76
+    Top = 157
     object LinkFillControlToField1: TLinkFillControlToField
       Category = 'Quick Bindings'
       Control = lsvResumo
@@ -181,5 +215,29 @@ object frmEncerramento: TfrmEncerramento
       FillHeaderExpressions = <>
       FillBreakGroups = <>
     end
+    object LinkFillControlToField2: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      Control = lsvPagamentos
+      Track = True
+      FillDataSource = BindSourceDB2
+      AutoFill = True
+      FillExpressions = <
+        item
+          SourceMemberName = 'DESCRICAO'
+          ControlMemberName = 'Text1'
+        end
+        item
+          SourceMemberName = 'VALOR'
+          ControlMemberName = 'Text2'
+        end>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+  end
+  object BindSourceDB2: TBindSourceDB
+    DataSet = dmLocal.qrForma_pgto
+    ScopeMappings = <>
+    Left = 80
+    Top = 248
   end
 end
