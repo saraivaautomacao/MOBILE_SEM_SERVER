@@ -31,7 +31,6 @@ object FrmLogin: TFrmLogin
       CustomIcon = <
         item
         end>
-      TextSettings.Trimming = None
       IsSelected = True
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000

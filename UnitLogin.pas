@@ -41,7 +41,7 @@ implementation
 uses udmLocal,configvo,NetworkState, ufrComanda, ufrConfiguracao;
 procedure TFrmLogin.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-    Action := TCloseAction.caFree;
+   // Action := TCloseAction.caFree;
     FrmLogin := nil;
     frmLogin.DisposeOf;
     fancy.DisposeOf;

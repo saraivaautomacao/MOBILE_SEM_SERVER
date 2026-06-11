@@ -42,6 +42,7 @@ type
     rectPix: TRectangle;
     btnPix: TSpeedButton;
     SpeedButton2: TSpeedButton;
+    Label1: TLabel;
     procedure SpeedButton5Click(Sender: TObject);
     procedure FormKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;
       Shift: TShiftState);
@@ -86,7 +87,7 @@ const
 
 procedure TfrmDetalhe.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-    Action := TCloseAction.caFree;
+    //Action := TCloseAction.caFree;
     frmDetalhe := nil;
     frmdetalhe.disposeof;
     dmlocal.qrvendas.close;

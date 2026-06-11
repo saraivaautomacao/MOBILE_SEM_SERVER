@@ -2,8 +2,8 @@ object frmDetalhe: TfrmDetalhe
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 622
-  ClientWidth = 380
+  ClientHeight = 632
+  ClientWidth = 381
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
@@ -11,7 +11,7 @@ object frmDetalhe: TfrmDetalhe
   OnKeyUp = FormKeyUp
   DesignerMasterStyle = 3
   object ToolBar2: TToolBar
-    Size.Width = 380.000000000000000000
+    Size.Width = 381.000000000000000000
     Size.Height = 48.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
@@ -25,12 +25,11 @@ object frmDetalhe: TfrmDetalhe
       Size.PlatformDefault = False
       StyleLookup = 'arrowlefttoolbutton'
       Text = 'SpeedButton5'
-      TextSettings.Trimming = None
       OnClick = SpeedButton5Click
     end
     object lblConferencia: TLabel
       Align = Client
-      Size.Width = 380.000000000000000000
+      Size.Width = 381.000000000000000000
       Size.Height = 48.000000000000000000
       Size.PlatformDefault = False
       TextSettings.HorzAlign = Center
@@ -43,8 +42,8 @@ object frmDetalhe: TfrmDetalhe
     Fill.Color = xFF7AF74A
     Margins.Top = 10.000000000000000000
     Margins.Bottom = 10.000000000000000000
-    Position.Y = 566.000000000000000000
-    Size.Width = 380.000000000000000000
+    Position.Y = 576.000000000000000000
+    Size.Width = 381.000000000000000000
     Size.Height = 46.000000000000000000
     Size.PlatformDefault = False
     Stroke.Kind = None
@@ -55,12 +54,11 @@ object frmDetalhe: TfrmDetalhe
       Images = dmLocal.ImageList1
       ImageIndex = 17
       Margins.Right = 20.000000000000000000
-      Position.X = 312.000000000000000000
+      Position.X = 313.000000000000000000
       Size.Width = 48.000000000000000000
       Size.Height = 48.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'cameratoolbutton'
-      TextSettings.Trimming = None
       OnClick = spImprimeClick
     end
     object edt_Cancela_comanda: TSpeedButton
@@ -71,7 +69,6 @@ object frmDetalhe: TfrmDetalhe
       Size.Height = 48.000000000000000000
       Size.PlatformDefault = False
       Text = 'Cancelar Comanda'
-      TextSettings.Trimming = None
       OnClick = edt_Cancela_comandaClick
     end
     object SpeedButton2: TSpeedButton
@@ -81,7 +78,6 @@ object frmDetalhe: TfrmDetalhe
       Size.Height = 48.000000000000000000
       Size.PlatformDefault = False
       Text = 'Finalizar'
-      TextSettings.Trimming = None
       OnClick = SpeedButton1Click
     end
   end
@@ -93,8 +89,8 @@ object frmDetalhe: TfrmDetalhe
     SideSpace = 1
     Align = Client
     DisableFocusEffect = False
-    Size.Width = 380.000000000000000000
-    Size.Height = 354.000000000000000000
+    Size.Width = 381.000000000000000000
+    Size.Height = 364.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 2
     ItemAppearance.ItemHeight = 55
@@ -146,27 +142,38 @@ object frmDetalhe: TfrmDetalhe
   end
   object Layout1: TLayout
     Align = Bottom
-    Position.Y = 402.000000000000000000
-    Size.Width = 380.000000000000000000
+    Position.Y = 412.000000000000000000
+    Size.Width = 381.000000000000000000
     Size.Height = 42.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 3
     object lbltotal: TLabel
       Align = Client
-      Size.Width = 380.000000000000000000
+      StyledSettings = [Family, Size, FontColor]
+      Size.Width = 202.000000000000000000
       Size.Height = 42.000000000000000000
       Size.PlatformDefault = False
-      TextSettings.HorzAlign = Center
+      TextSettings.Font.StyleExt = {00060000000000000004000000}
       Text = 'lbltotal'
       TabOrder = 0
+    end
+    object Label1: TLabel
+      Align = Left
+      Margins.Left = 10.000000000000000000
+      Position.X = 10.000000000000000000
+      Size.Width = 169.000000000000000000
+      Size.Height = 42.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Total do Pedido:  R$'
+      TabOrder = 1
     end
   end
   object layPagamento: TLayout
     Align = Bottom
     Margins.Top = 4.000000000000000000
     Margins.Bottom = 4.000000000000000000
-    Position.Y = 448.000000000000000000
-    Size.Width = 380.000000000000000000
+    Position.Y = 458.000000000000000000
+    Size.Width = 381.000000000000000000
     Size.Height = 104.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 4
@@ -177,7 +184,7 @@ object frmDetalhe: TfrmDetalhe
       Margins.Bottom = 2.000000000000000000
       Position.X = 8.000000000000000000
       Position.Y = 4.000000000000000000
-      Size.Width = 372.000000000000000000
+      Size.Width = 373.000000000000000000
       Size.Height = 20.000000000000000000
       Size.PlatformDefault = False
       TextSettings.HorzAlign = Center
@@ -186,11 +193,12 @@ object frmDetalhe: TfrmDetalhe
     end
     object layBotoesPagamento: TLayout
       Align = Client
+      Padding.Left = 5.000000000000000000
       Margins.Left = 5.000000000000000000
       Margins.Top = 2.000000000000000000
       Margins.Right = 6.000000000000000000
       Margins.Bottom = 4.000000000000000000
-      Size.Width = 369.000000000000000000
+      Size.Width = 370.000000000000000000
       Size.Height = 72.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
@@ -201,9 +209,9 @@ object frmDetalhe: TfrmDetalhe
         Margins.Top = 2.000000000000000000
         Margins.Right = 2.000000000000000000
         Margins.Bottom = 2.000000000000000000
-        Position.X = 2.000000000000000000
+        Position.X = 7.000000000000000000
         Position.Y = 2.000000000000000000
-        Size.Width = 91.000000000000000000
+        Size.Width = 80.000000000000000000
         Size.Height = 68.000000000000000000
         Size.PlatformDefault = False
         Stroke.Color = claGainsboro
@@ -212,12 +220,11 @@ object frmDetalhe: TfrmDetalhe
         object btnDinheiro: TSpeedButton
           Tag = 1
           Align = Client
-          Size.Width = 91.000000000000000000
+          Size.Width = 80.000000000000000000
           Size.Height = 48.000000000000000000
           Size.PlatformDefault = False
           Text = '$ Dinheiro'
           TextSettings.WordWrap = True
-          TextSettings.Trimming = None
           OnClick = btnPagamentoClick
         end
       end
@@ -228,7 +235,7 @@ object frmDetalhe: TfrmDetalhe
         Margins.Top = 2.000000000000000000
         Margins.Right = 2.000000000000000000
         Margins.Bottom = 2.000000000000000000
-        Position.X = 97.000000000000000000
+        Position.X = 91.000000000000000000
         Position.Y = 2.000000000000000000
         Size.Width = 95.000000000000000000
         Size.Height = 68.000000000000000000
@@ -244,7 +251,6 @@ object frmDetalhe: TfrmDetalhe
           Size.PlatformDefault = False
           Text = 'Cartao Credito'
           TextSettings.WordWrap = True
-          TextSettings.Trimming = None
           OnClick = btnPagamentoClick
         end
       end
@@ -255,7 +261,7 @@ object frmDetalhe: TfrmDetalhe
         Margins.Top = 2.000000000000000000
         Margins.Right = 2.000000000000000000
         Margins.Bottom = 2.000000000000000000
-        Position.X = 196.000000000000000000
+        Position.X = 190.000000000000000000
         Position.Y = 2.000000000000000000
         Size.Width = 95.000000000000000000
         Size.Height = 68.000000000000000000
@@ -271,7 +277,6 @@ object frmDetalhe: TfrmDetalhe
           Size.PlatformDefault = False
           Text = 'Cartao Debito'
           TextSettings.WordWrap = True
-          TextSettings.Trimming = None
           OnClick = btnPagamentoClick
         end
       end
@@ -280,9 +285,9 @@ object frmDetalhe: TfrmDetalhe
         Fill.Color = claWhite
         Margins.Top = 2.000000000000000000
         Margins.Bottom = 2.000000000000000000
-        Position.X = 293.000000000000000000
+        Position.X = 287.000000000000000000
         Position.Y = 2.000000000000000000
-        Size.Width = 95.000000000000000000
+        Size.Width = 80.000000000000000000
         Size.Height = 68.000000000000000000
         Size.PlatformDefault = False
         Stroke.Color = claGainsboro
@@ -291,12 +296,11 @@ object frmDetalhe: TfrmDetalhe
         object btnPix: TSpeedButton
           Tag = 4
           Align = Client
-          Size.Width = 95.000000000000000000
+          Size.Width = 80.000000000000000000
           Size.Height = 48.000000000000000000
           Size.PlatformDefault = False
           Text = 'Pix'
           TextSettings.WordWrap = True
-          TextSettings.Trimming = None
           OnClick = btnPagamentoClick
         end
       end

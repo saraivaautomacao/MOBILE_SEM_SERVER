@@ -341,7 +341,7 @@ end;
 
 procedure TfrmProdutos.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-    Action := TCloseAction.caFree;
+    //Action := TCloseAction.caFree;
     frmProdutos:=nil;
     fancy.DisposeOf;
     dmLocal.memPedido.close;
