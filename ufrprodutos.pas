@@ -76,6 +76,7 @@ type
     MasterButton: TSpeedButton;
     BindSourceDB4: TBindSourceDB;
     LinkListControlToField4: TLinkListControlToField;
+    btnCancelaPeso: TSpeedButton;
     procedure img_voltarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure lstVProdutosButtonClick(const Sender: TObject;
@@ -102,6 +103,7 @@ type
     procedure MultiView1Shown(Sender: TObject);
     procedure ListBox1ItemClick(const Sender: TCustomListBox;
       const Item: TListBoxItem);
+    procedure btnCancelaPesoClick(Sender: TObject);
   private
     { Private declarations }
      precoUnit:Extended;
@@ -124,6 +126,11 @@ implementation
 
 uses udmLocal, ufrSabor,  ufrComanda,acbrposprinter;
 
+
+procedure TfrmProdutos.btnCancelaPesoClick(Sender: TObject);
+begin
+  recPeso.visible:=false;
+end;
 
 procedure TfrmProdutos.btnConfirmaPesoClick(Sender: TObject);
 begin
