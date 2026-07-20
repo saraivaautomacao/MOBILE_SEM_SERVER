@@ -7,7 +7,7 @@ uses
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
   FMX.Edit, FMX.Controls.Presentation, FMX.Objects, FMX.Layouts, FMX.TabControl,
   Rest.Types,data.db, FMX.Ani, FMX.Effects,uFancyDialog, System.Actions,
-  FMX.ActnList,idTCPClient ,    idglobal;
+  FMX.ActnList,   idglobal;
 
 type
   TFrmLogin = class(TForm)
@@ -118,26 +118,6 @@ begin
       end;
     finally
       ns.disposeof;
-    end;
- {
-    //verifica conexao com o endpoint
-     var  idTCPClient:TIdtcpclient:= TIdtcpclient.Create(nil);
-     try
-      idTCPClient.ReadTimeout:=2000;
-      idTCPClient.IPVersion:=Id_IPv4;
-      idTCPClient.ConnectTimeout:=2000;
-      idTCPClient.Port:=config.porta.tointeger;
-      idTCPClient.Host:=config.Ip;
-      try
-         idTCPClient.Connect;
-         idTCPClient.Disconnect;
-      except
-         fancy.Show(TIconDialog.Warning, 'server OFF','Aviso', 'OK');
-         exit;
-      end;
-     finally
-       idTCPClient.Free;
-     end;  }
 
 
 
@@ -147,5 +127,6 @@ begin
     frmComanda.Show;
     FrmLogin.close;
    end;
+end;
 
 end.

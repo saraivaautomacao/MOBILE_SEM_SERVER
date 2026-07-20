@@ -10,7 +10,7 @@ uses
   FireDAC.Stan.Intf, FireDAC.Stan.Option,
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
   FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Data.DB,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client,Idtcpclient,idglobal ;
 
 type
   TfrmConfiguracao = class(TForm)
@@ -121,12 +121,35 @@ procedure TfrmConfiguracao.rect_cargaClick(Sender: TObject);
   var
     t: TThread;
     status:integer;
-
+      idTCPClient:TIdtcpclient ;
 begin
     config.Ip:='187.19.165.178';
     config.porta:=edt_port.text;
     config.url:='http://'+config.Ip+':'+edt_port.text;
     config.ident:=edt_IdentServer.text; ;
+
+
+
+    //verifica conexao com o endpoint
+     idTCPClient:= TIdtcpclient.Create(nil);
+     try
+      idTCPClient.ReadTimeout:=2000;
+      idTCPClient.IPVersion:=Id_IPv4;
+      idTCPClient.ConnectTimeout:=2000;
+     idTCPClient.Port:=strtoInt(edt_port.text);
+      idTCPClient.Host:=config.Ip;
+      try
+         idTCPClient.Connect;
+         idTCPClient.Disconnect;
+      except
+         fancy.Show(TIconDialog.Warning, 'server OFF','Aviso', 'OK');
+         exit;
+      end;
+     finally
+       idTCPClient.Free;
+     end;
+
+
   if  TControllerComanda.verificapath(trim(edt_IdentServer.text))<>200 then
   begin
       fancy.Show(TIconDialog.Warning, 'Aviso','identificação server invalida', 'OK');
