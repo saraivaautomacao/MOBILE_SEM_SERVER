@@ -43,10 +43,17 @@ type
     btnPix: TSpeedButton;
     SpeedButton2: TSpeedButton;
     Label1: TLabel;
+    rectLinhaSuperior: TRectangle;
+    layAcoesPrimarias: TLayout;
+    rectFinalizar: TRectangle;
+    layAcoesSecundarias: TLayout;
+    rectLinhaTotal: TRectangle;
     procedure SpeedButton5Click(Sender: TObject);
     procedure FormKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;
       Shift: TShiftState);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormResize(Sender: TObject);
+    procedure FormShow(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
     procedure spImprimeClick(Sender: TObject);
     // Novo evento unificado para os botões de pagamento
@@ -58,6 +65,7 @@ type
     procedure impressao_parcial;
     procedure AtualizarSelecaoPagamento;
     procedure DesmarcarTodosBotoes;
+    procedure AjustarCardsPagamento;
 
   public
     { Public declarations }
@@ -84,6 +92,7 @@ const
   COR_NAO_SELECIONADO   = $FFFFFFFF;  // Branco (claWhite)
   COR_BORDA_SELECIONADA = $FF2E7D32;  // Verde escuro
   COR_BORDA_NORMAL      = $FFDCDCDC;  // Gainsboro (claGainsboro)
+  COR_MARCA             = $FF6A3DE8;  // Roxo da marca
 
 procedure TfrmDetalhe.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
@@ -105,6 +114,46 @@ begin
  {$ENDIF}
   if Key = vkHardwareBack then
     key := 0;
+end;
+
+// ---------------------------------------------------------------------------
+// Distribui a largura disponível igualmente entre os 4 cards de pagamento
+// ---------------------------------------------------------------------------
+procedure TfrmDetalhe.AjustarCardsPagamento;
+var
+  Cards: array[0..3] of TRectangle;
+  i: Integer;
+  LDisponivel: Single;
+begin
+  Cards[0] := rectDinheiro;
+  Cards[1] := rectCredito;
+  Cards[2] := rectDebito;
+  Cards[3] := rectPix;
+
+  LDisponivel := layBotoesPagamento.Width
+               - layBotoesPagamento.Padding.Left
+               - layBotoesPagamento.Padding.Right;
+
+  for i := 0 to 3 do
+    LDisponivel := LDisponivel - Cards[i].Margins.Left - Cards[i].Margins.Right;
+
+  LDisponivel := LDisponivel / 4;
+  if LDisponivel > 0 then
+    for i := 0 to 3 do
+      Cards[i].Width := LDisponivel;
+end;
+
+procedure TfrmDetalhe.FormShow(Sender: TObject);
+begin
+  if FFormaPagamento = fpNenhuma then
+    FFormaPagamento := fpDinheiro;
+  AtualizarSelecaoPagamento;
+  AjustarCardsPagamento;
+end;
+
+procedure TfrmDetalhe.FormResize(Sender: TObject);
+begin
+  AjustarCardsPagamento;
 end;
 
 Function TamStr(Texto:String;N:SmallInt;Direcao:Char):String;
@@ -139,10 +188,10 @@ begin
   rectPix.Fill.Color      := COR_NAO_SELECIONADO;
   rectPix.Stroke.Color      := COR_BORDA_NORMAL;
 
-  btnDinheiro.TextSettings.FontColor := $FF000000;  // claBlack
-  btnCredito.TextSettings.FontColor  := $FF000000;
-  btnDebito.TextSettings.FontColor   := $FF000000;
-  btnPix.TextSettings.FontColor      := $FF000000;
+  btnDinheiro.TextSettings.FontColor := $FF1F2933;
+  btnCredito.TextSettings.FontColor  := $FF1F2933;
+  btnDebito.TextSettings.FontColor   := $FF1F2933;
+  btnPix.TextSettings.FontColor      := $FF1F2933;
 end;
 
 procedure TfrmDetalhe.edt_Cancela_comandaClick(Sender: TObject);

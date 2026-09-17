@@ -123,7 +123,7 @@ procedure TfrmConfiguracao.rect_cargaClick(Sender: TObject);
     status:integer;
       idTCPClient:TIdtcpclient ;
 begin
-    config.Ip:='187.19.165.178';
+    config.Ip:='192.168.0.250' ; //'187.19.165.178';
     config.porta:=edt_port.text;
     config.url:='http://'+config.Ip+':'+edt_port.text;
     config.ident:=edt_IdentServer.text; ;

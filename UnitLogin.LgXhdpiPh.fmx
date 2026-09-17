@@ -2,37 +2,48 @@ inherited FrmLogin_LgXhdpiPh: TFrmLogin_LgXhdpiPh
   ClientHeight = 695
   ClientWidth = 450
   DesignerMasterStyle = 3
-  inherited Rectangle1: TRectangle
+  inherited LayoutBrand: TLayout
     Size.Width = 450.000000000000000000
-    inherited lbl_titulo: TLabel
-      TextSettings.Font.StyleExt = {00060000000000000004000000}
+    Size.Height = 286.000000000000000000
+    inherited rectLogoBadge: TRectangle
+      Position.Y = 92.000000000000000000
+      Size.Width = 136.000000000000000000
+      Size.Height = 136.000000000000000000
+      inherited ImageLogo: TImage
+        Size.Width = 104.000000000000000000
+        Size.Height = 104.000000000000000000
+      end
+    end
+    inherited lblAppName: TLabel
+      Position.Y = 248.000000000000000000
+      TextSettings.Font.Size = 26.000000000000000000
     end
   end
-  inherited TabControl: TTabControl
+  inherited LayoutCardWrap: TLayout
     Size.Width = 450.000000000000000000
-    Size.Height = 645.000000000000000000
-    Sizes = (
-      450s
-      645s
-      450s
-      645s)
-    inherited TabLogin: TTabItem
-      ExplicitSize.cx = 8.000000000000000000
-      ExplicitSize.cy = 8.000000000000000000
-      inherited Layout1: TLayout
-        inherited Label2: TLabel
-          TextSettings.Font.StyleExt = {00060000000000000004000000}
+    Size.Height = 315.000000000000000000
+    inherited Card: TRectangle
+      Size.Width = 386.000000000000000000
+      Size.Height = 286.000000000000000000
+      inherited LayoutCardInner: TLayout
+        Margins.Left = 31.000000000000000000
+        Margins.Top = 29.000000000000000000
+        Margins.Right = 31.000000000000000000
+        Margins.Bottom = 29.000000000000000000
+        inherited edt_usuario: TEdit
+          Size.Height = 56.000000000000000000
+        end
+        inherited rect_login: TRectangle
+          Size.Height = 60.000000000000000000
+          inherited lblAcessar: TLabel
+            Size.Height = 60.000000000000000000
+          end
         end
       end
     end
-    inherited TabConfig: TTabItem
-      ExplicitSize.cx = 8.000000000000000000
-      ExplicitSize.cy = 8.000000000000000000
-      inherited Layout2: TLayout
-        inherited Label4: TLabel
-          TextSettings.Font.StyleExt = {00060000000000000004000000}
-        end
-      end
-    end
+  end
+  inherited LayoutFooter: TLayout
+    Size.Width = 450.000000000000000000
+    Size.Height = 94.000000000000000000
   end
 end

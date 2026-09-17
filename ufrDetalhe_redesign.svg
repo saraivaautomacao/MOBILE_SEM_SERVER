@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Mock visual do frmDetalhe (fechamento de mesa) - redesenho
+  Largura 381px x Altura 632px (mesmo ClientWidth/Height do form)
+  Paleta: marca #6A3DE8 | verde seleção #4CAF50 | cinza texto #424242
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="381" height="632" viewBox="0 0 381 632">
+  <defs>
+    <style>
+      .prod   { font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; fill: #1A1A1A; }
+      .det    { font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; fill: #424242; }
+      .titulo { font-family: 'Segoe UI', Arial, sans-serif; font-size: 14px; fill: #424242; }
+      .totalv { font-family: 'Segoe UI', Arial, sans-serif; font-size: 18px; font-weight: bold; fill: #6A3DE8; }
+      .totall { font-family: 'Segoe UI', Arial, sans-serif; font-size: 14px; fill: #424242; }
+      .prim   { font-family: 'Segoe UI', Arial, sans-serif; font-size: 17px; font-weight: bold; fill: #FFFFFF; }
+      .sec    { font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; }
+    </style>
+  </defs>
+
+  <!-- fundo -->
+  <rect x="0" y="0" width="381" height="632" fill="#FFFFFF"/>
+
+  <!-- ===== 1. Toolbar ===== -->
+  <rect x="0" y="0" width="381" height="48" fill="#6A3DE8"/>
+  <path d="M20 24 L34 12 M20 24 L34 36" stroke="#FFFFFF" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="190.5" y="31" text-anchor="middle" font-family="'Segoe UI', Arial" font-size="17" fill="#FFFFFF">Comanda 05</text>
+
+  <!-- ===== 2. ListView (itens) ===== -->
+  <!-- itens com 64px cada -->
+  <g>
+    <rect x="0" y="48"   width="381" height="64" fill="#FFFFFF"/>
+    <rect x="0" y="112"  width="381" height="64" fill="#FAFAFA"/>
+    <rect x="0" y="176"  width="381" height="64" fill="#FFFFFF"/>
+    <rect x="0" y="240"  width="381" height="64" fill="#FAFAFA"/>
+    <rect x="0" y="304"  width="381" height="64" fill="#FFFFFF"/>
+    <rect x="0" y="368"  width="381" height="1"  fill="#F0F0F0"/>
+  </g>
+
+  <!-- Item 1 -->
+  <text class="prod" x="12" y="73">X-Burger</text>
+  <text class="det" x="12" y="98">1</text>
+  <text class="det" x="140" y="98" text-anchor="end">R$ 18,00</text>
+  <text class="det" x="247" y="98" text-anchor="end" font-weight="bold">R$ 18,00</text>
+
+  <!-- Item 2 -->
+  <text class="prod" x="12" y="137">Coca-Cola Lata</text>
+  <text class="det" x="12" y="162">2</text>
+  <text class="det" x="140" y="162" text-anchor="end">R$ 6,50</text>
+  <text class="det" x="247" y="162" text-anchor="end" font-weight="bold">R$ 13,00</text>
+
+  <!-- Item 3 -->
+  <text class="prod" x="12" y="201">Batata Frita</text>
+  <text class="det" x="12" y="226">1</text>
+  <text class="det" x="140" y="226" text-anchor="end">R$ 12,00</text>
+  <text class="det" x="247" y="226" text-anchor="end" font-weight="bold">R$ 12,00</text>
+
+  <!-- Item 4 -->
+  <text class="prod" x="12" y="265">Sobremesa Pudim</text>
+  <text class="det" x="12" y="290">1</text>
+  <text class="det" x="140" y="290" text-anchor="end">R$ 8,00</text>
+  <text class="det" x="247" y="290" text-anchor="end" font-weight="bold">R$ 8,00</text>
+
+  <!-- Item 5 (exemplo de produto longo, cortado) -->
+  <text class="prod" x="12" y="329">Combo Casal (2 X-Burgers + Batata ...</text>
+  <text class="det" x="12" y="354">1</text>
+  <text class="det" x="140" y="354" text-anchor="end">R$ 42,90</text>
+  <text class="det" x="247" y="354" text-anchor="end" font-weight="bold">R$ 42,90</text>
+
+  <!-- ===== 3. Forma de Pagamento (layPagamento 380..488) ===== -->
+  <text class="titulo" x="14" y="404">Forma de Pagamento</text>
+
+  <!-- cards iguais: largura 85.25, margens 3, x iniciando em 8 -->
+  <g stroke="#DCDCDC" stroke-width="1">
+    <rect x="8"    y="414" width="85.25" height="56" rx="8" fill="#FFFFFF"/>
+    <rect x="99.25" y="414" width="85.25" height="56" rx="8" fill="#FFFFFF"/>
+    <rect x="190.5" y="414" width="85.25" height="56" rx="8" fill="#FFFFFF"/>
+    <rect x="281.75" y="414" width="85.25" height="56" rx="8" fill="#FFFFFF"/>
+  </g>
+  <text class="titulo" x="50.6"  y="448" text-anchor="middle">Dinheiro</text>
+  <text class="titulo" x="141.9" y="448" text-anchor="middle">Crédito</text>
+  <text class="titulo" x="233.1" y="448" text-anchor="middle">Débito</text>
+  <text class="titulo" x="324.4" y="448" text-anchor="middle">Pix</text>
+
+  <!-- exemplo de card selecionado (verde) -->
+  <rect x="8" y="414" width="85.25" height="56" rx="8" fill="#4CAF50"/>
+  <text x="50.6" y="448" text-anchor="middle" font-family="'Segoe UI', Arial" font-size="14" fill="#FFFFFF">Dinheiro</text>
+
+  <!-- ===== 4. Total (Layout1 488..540) ===== -->
+  <rect x="0" y="488" width="381" height="1" fill="#E8E8E8"/>
+  <text class="totall" x="14" y="520">Total do Pedido: R$</text>
+  <text class="totalv" x="367" y="520" text-anchor="end">93,90</text>
+
+  <!-- ===== 5. Bottom sheet (ret_destImpressao 540..632) ===== -->
+  <rect x="0" y="540" width="381" height="1"  fill="#E0E0E0"/>
+  <!-- Finalizar (primário) -->
+  <rect x="14" y="550" width="353" height="50" rx="10" fill="#6A3DE8"/>
+  <text class="prim" x="190.5" y="581" text-anchor="middle">Finalizar</text>
+
+  <!-- linha secundária -->
+  <text class="sec" x="14" y="620" fill="#B71C1C">Cancelar Comanda</text>
+  <!-- icon impressorinha -->
+  <rect x="288" y="612" width="10" height="9" rx="1.5" fill="none" stroke="#424242" stroke-width="1.6"/>
+  <rect x="290" y="609" width="6" height="4" fill="#424242"/>
+  <g stroke="#424242" stroke-width="1.6" stroke-linecap="round">
+    <line x1="270" y1="612" x2="285" y2="612"/>
+    <line x1="270" y1="618" x2="285" y2="618"/>
+  </g>
+  <text class="sec" x="290" y="621" fill="#424242">Imprimir</text>
+</svg>

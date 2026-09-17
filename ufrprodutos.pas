@@ -1,4 +1,4 @@
-unit ufrprodutos;
+ï»¿unit ufrprodutos;
 
 interface
 
@@ -65,11 +65,12 @@ type
     rectObs1: TRectangle;
     StyleBook1: TStyleBook;
     recPeso: TRectangle;
-    lstbxPeso: TListBox;
-    ListBoxItem1: TListBoxItem;
-    ListBoxItem6: TListBoxItem;
+    rectCardPeso: TRectangle;
+    lblPesoTitulo: TLabel;
+    rectEditPeso: TRectangle;
     edtPeso: TEdit;
-    ListBoxItem7: TListBoxItem;
+    layoutBotoes: TLayout;
+    rectCancelaPeso: TRectangle;
     btnConfirmaPeso: TSpeedButton;
     MultiView1: TMultiView;
     ListBox1: TListBox;
@@ -77,6 +78,7 @@ type
     BindSourceDB4: TBindSourceDB;
     LinkListControlToField4: TLinkListControlToField;
     btnCancelaPeso: TSpeedButton;
+    rectConfirmaPeso: TRectangle;
     procedure img_voltarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure lstVProdutosButtonClick(const Sender: TObject;
@@ -133,12 +135,21 @@ begin
 end;
 
 procedure TfrmProdutos.btnConfirmaPesoClick(Sender: TObject);
+var
+  peso: Double;
 begin
-   recPeso.visible:=false;
-   if trim(edtPeso.text)=emptyStr then
-        edtPeso.text:='1000';
-   compoe_pedido('1',StrtoFloatDef(edtpeso.text,1000)/1000);
+   if Trim(edtPeso.Text) = EmptyStr then
+        edtPeso.Text := '1000';
 
+   peso := StrToFloatDef(Trim(edtPeso.Text), 0);
+   if peso <= 0 then
+   begin
+      fancy.Show(TIconDialog.Warning, 'Aviso', 'Informe um peso v'#225'lido (gramas)', 'OK');
+      edtPeso.SetFocus;
+      Exit;
+   end;
+   recPeso.Visible := False;
+   compoe_pedido('1', peso / 1000);
 end;
 
 procedure TfrmProdutos.Button1Click(Sender: TObject);
@@ -393,7 +404,7 @@ procedure TfrmProdutos.Image1Click(Sender: TObject);
 begin
   if rectTabelaPreco.Visible then
   begin
-     fancy.Show(TIconDialog.Info, 'Aviso','Finalize seleção de item', 'OK');
+     fancy.Show(TIconDialog.Info, 'Aviso','Finalize seleï¿½ï¿½o de item', 'OK');
      exit;
   end;
   if dmLocal.memPedido.isempty then
@@ -454,7 +465,7 @@ begin
   if (dmLocal.qrProdutosbalanca.asString='S') then
   begin
       recPeso.Visible:=true;
-      lstbxPeso.ListItems[0].text:=dmLocal.qrProdutosproduto.asString;
+      lblPesoTitulo.text:=dmLocal.qrProdutosproduto.asString;
       precounit:=dmLocal.qrProdutosprecovenda.asCurrency;
       edtpeso.text:='';
       edtPeso.SetFocus;
@@ -568,7 +579,7 @@ procedure TfrmProdutos.SpeedButton1Click(Sender: TObject);
 begin
     if precounit<=0 then
     begin
-      fancy.Show(TIconDialog.Info, 'Aviso','Sem informação de preço', 'OK');
+      fancy.Show(TIconDialog.Info, 'Aviso','Sem informaï¿½ï¿½o de preï¿½o', 'OK');
       exit;
     end;
     rectTabelaPreco.Visible:=false;

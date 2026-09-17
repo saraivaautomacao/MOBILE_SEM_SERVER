@@ -99,6 +99,7 @@ begin
         end;
         frmcomanda.lstbxMesas.Clear;
         frmcomanda.carregamesas;
+        Button2.OnClick:=nil;
         close;
       end;
     end
